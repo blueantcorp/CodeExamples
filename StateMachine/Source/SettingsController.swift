@@ -31,8 +31,9 @@
 
 import UIKit
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
-	var window: UIWindow?
+class SettingsController: UIViewController {
+	override func viewDidLoad() {
+		super.viewDidLoad()
+	}
 }
 

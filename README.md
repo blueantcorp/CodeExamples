@@ -1,2 +1,2 @@
 # Swift Examples
-A collection of Swift samples to experiment with different topics.
+A collection of Swift samples and experiments
