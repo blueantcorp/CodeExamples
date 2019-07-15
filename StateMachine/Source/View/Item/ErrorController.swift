@@ -20,7 +20,7 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: 9F531C97-4F7E-41B9-8650-70D0EC690995
+//	ID: A6F0779B-2F84-4192-B871-740969EC2AED
 //
 //	Pkg: StateMachine
 //
@@ -31,46 +31,16 @@
 
 import UIKit
 
-class SettingsController: UIViewController {
-	
-	@IBOutlet weak var afterRetrySegmentedControl: UISegmentedControl!
-	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		title = "Settings"
-	}
-	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		Settings.shared.reset()
-	}
-	
-	@IBAction func stateAfterLoadingValueChanged(sender: UISegmentedControl) {
-		guard let newState = State(rawValue: sender.selectedSegmentIndex) else {
-			return
-		}
-		
-		Settings.shared.stateAfterLoading = newState
-		
-		if case .error = newState {
-			afterRetrySegmentedControl.isEnabled = true
-		} else {
-			afterRetrySegmentedControl.isEnabled = false
-		}
-	}
-	
-	@IBAction func stateAfterRetryValueChanged(sender: UISegmentedControl) {
-		guard let newState = State(rawValue: sender.selectedSegmentIndex) else {
-			return
-		}
-		
-		Settings.shared.stateAfterRetry = newState
-	}
-	
-	@IBAction func doContinue() {
-		let stateProvider = ItemStateProvider()
-		let stateContainerViewController = StateController(stateProvider: stateProvider)
-		show(stateContainerViewController, sender: self)
-	}
+protocol ErrorControllerDelegate: AnyObject {
+	func didRetry()
 }
 
+final class ErrorController: UIViewController {
+	
+	weak var delegate: ErrorControllerDelegate?
+	
+	@IBAction func doRetry() {
+		Settings.shared.didRetry = true
+		delegate?.didRetry()
+	}
+}

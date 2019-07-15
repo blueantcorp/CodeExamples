@@ -20,7 +20,7 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: 9F531C97-4F7E-41B9-8650-70D0EC690995
+//	ID: 4AEAC79F-9AEA-4AE9-9CD0-D2885AB3ED69
 //
 //	Pkg: StateMachine
 //
@@ -31,46 +31,43 @@
 
 import UIKit
 
-class SettingsController: UIViewController {
+protocol ItemListControllerDelegate: AnyObject {
+	func didFailFetching()
+	func didReceiveNoData()
+}
+
+final class ItemListController: UIViewController, LoadingHandler {
 	
-	@IBOutlet weak var afterRetrySegmentedControl: UISegmentedControl!
+	@IBOutlet weak var label: UILabel!
+	
+	weak var delegate: ItemListControllerDelegate?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		title = "Settings"
+		label.isHidden = true
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
-		Settings.shared.reset()
+		fetchData()
 	}
 	
-	@IBAction func stateAfterLoadingValueChanged(sender: UISegmentedControl) {
-		guard let newState = State(rawValue: sender.selectedSegmentIndex) else {
-			return
-		}
+	private func fetchData() {
+		showLoading()
 		
-		Settings.shared.stateAfterLoading = newState
-		
-		if case .error = newState {
-			afterRetrySegmentedControl.isEnabled = true
-		} else {
-			afterRetrySegmentedControl.isEnabled = false
+		DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) { [weak self] in
+			guard let self = self else { return }
+			self.hideLoading()
+			self.label.isHidden = false
+			self.notifyAfterWait()
 		}
 	}
 	
-	@IBAction func stateAfterRetryValueChanged(sender: UISegmentedControl) {
-		guard let newState = State(rawValue: sender.selectedSegmentIndex) else {
-			return
+	private func notifyAfterWait() {
+		switch Settings.shared.state {
+		case .empty: self.delegate?.didReceiveNoData()
+		case .error: self.delegate?.didFailFetching()
+		default: break // Do nothing, shows content
 		}
-		
-		Settings.shared.stateAfterRetry = newState
-	}
-	
-	@IBAction func doContinue() {
-		let stateProvider = ItemStateProvider()
-		let stateContainerViewController = StateController(stateProvider: stateProvider)
-		show(stateContainerViewController, sender: self)
 	}
 }
-

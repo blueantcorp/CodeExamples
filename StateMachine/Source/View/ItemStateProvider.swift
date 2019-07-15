@@ -20,7 +20,7 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: 9F531C97-4F7E-41B9-8650-70D0EC690995
+//	ID: DB46769C-ECE5-4F0C-8E06-411D24D816DF
 //
 //	Pkg: StateMachine
 //
@@ -31,46 +31,47 @@
 
 import UIKit
 
-class SettingsController: UIViewController {
+import UIKit
+
+class ItemStateProvider: StateProvider {
 	
-	@IBOutlet weak var afterRetrySegmentedControl: UISegmentedControl!
+	var initialState: State = .content
+	var title: String = "Items"
+	weak var stateChanger: StateChanger?
 	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		title = "Settings"
-	}
-	
-	override func viewWillAppear(_ animated: Bool) {
-		super.viewWillAppear(animated)
-		Settings.shared.reset()
-	}
-	
-	@IBAction func stateAfterLoadingValueChanged(sender: UISegmentedControl) {
-		guard let newState = State(rawValue: sender.selectedSegmentIndex) else {
-			return
+	func contentViewController() -> UIViewController {
+		guard let contentViewController: ItemListController = UIStoryboard.makeViewController(withId: "ContentController") else {
+			fatalError("Content should be present")
 		}
 		
-		Settings.shared.stateAfterLoading = newState
-		
-		if case .error = newState {
-			afterRetrySegmentedControl.isEnabled = true
-		} else {
-			afterRetrySegmentedControl.isEnabled = false
-		}
+		contentViewController.delegate = self
+		return contentViewController
 	}
 	
-	@IBAction func stateAfterRetryValueChanged(sender: UISegmentedControl) {
-		guard let newState = State(rawValue: sender.selectedSegmentIndex) else {
-			return
-		}
-		
-		Settings.shared.stateAfterRetry = newState
+	func errorViewController() -> UIViewController? {
+		let errorViewController: ErrorController? = UIStoryboard.makeViewController(withId: "ErrorController")
+		errorViewController?.delegate = self
+		return errorViewController
 	}
 	
-	@IBAction func doContinue() {
-		let stateProvider = ItemStateProvider()
-		let stateContainerViewController = StateController(stateProvider: stateProvider)
-		show(stateContainerViewController, sender: self)
+	func emptyViewController() -> UIViewController? {
+		let emptyViewController: EmptyController? = UIStoryboard.makeViewController(withId: "EmptyController")
+		return emptyViewController
 	}
 }
 
+extension ItemStateProvider: ErrorControllerDelegate {
+	func didRetry() {
+		stateChanger?.changeTo(state: .content)
+	}
+}
+
+extension ItemStateProvider: ItemListControllerDelegate {
+	func didFailFetching() {
+		stateChanger?.changeTo(state: .error)
+	}
+	
+	func didReceiveNoData() {
+		stateChanger?.changeTo(state: .empty)
+	}
+}

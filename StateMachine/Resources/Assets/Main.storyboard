@@ -10,24 +10,24 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Book List View Controller-->
+        <!--Item List Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="ContentViewController" id="BYZ-38-t0r" customClass="BookListViewController" customModule="StateMachine" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContentController" id="BYZ-38-t0r" customClass="ItemListController" customModule="StateMachine" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BOOKS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qva-SL-CA9">
-                                <rect key="frame" x="135" y="170" width="105" height="36"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <color key="textColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Items" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qva-SL-CA9">
+                                <rect key="frame" x="153.5" y="235.5" width="68.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                <color key="textColor" red="0.46481978889999997" green="0.65296483039999997" blue="0.57103377580000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.91484135389328003" green="0.97174340486526489" blue="0.90008533000946045" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="qva-SL-CA9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="5Nj-bi-bWX"/>
+                            <constraint firstItem="qva-SL-CA9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-80" id="J5n-9D-7gs"/>
                             <constraint firstItem="qva-SL-CA9" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gnC-3H-H9F"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -40,37 +40,39 @@
             </objects>
             <point key="canvasLocation" x="202" y="-1003"/>
         </scene>
-        <!--Error View Controller-->
+        <!--Error Controller-->
         <scene sceneID="3ys-Te-naI">
             <objects>
-                <viewController storyboardIdentifier="ErrorViewController" id="0uC-hd-mhV" customClass="ErrorViewController" customModule="StateMachine" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ErrorController" id="0uC-hd-mhV" customClass="ErrorController" customModule="StateMachine" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bsh-jN-AgI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ERROR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPe-i0-9I6">
-                                <rect key="frame" x="137.5" y="170" width="100" height="36"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7G8-37-fvP">
-                                <rect key="frame" x="20" y="226" width="335" height="100"/>
+                                <rect key="frame" x="20" y="291.5" width="335" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="NJ6-Os-4VG"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Retry"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                <state key="normal" title="Retry">
+                                    <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                </state>
                                 <connections>
                                     <action selector="doRetry" destination="0uC-hd-mhV" eventType="touchUpInside" id="rRn-Se-n3Z"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPe-i0-9I6">
+                                <rect key="frame" x="157.5" y="235.5" width="60" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.96863430738449097" green="0.89589840173721313" blue="0.87942910194396973" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="7G8-37-fvP" firstAttribute="leading" secondItem="g54-t5-sb5" secondAttribute="leading" constant="20" id="9Ko-2n-zYs"/>
                             <constraint firstItem="g54-t5-sb5" firstAttribute="trailing" secondItem="7G8-37-fvP" secondAttribute="trailing" constant="20" id="UOX-gv-lxj"/>
-                            <constraint firstItem="oPe-i0-9I6" firstAttribute="top" secondItem="g54-t5-sb5" secondAttribute="top" constant="150" id="a3G-L4-6Pb"/>
+                            <constraint firstItem="oPe-i0-9I6" firstAttribute="centerY" secondItem="bsh-jN-AgI" secondAttribute="centerY" constant="-80" id="dLB-9b-aO6"/>
                             <constraint firstItem="oPe-i0-9I6" firstAttribute="centerX" secondItem="g54-t5-sb5" secondAttribute="centerX" id="fXO-ui-EmC"/>
                             <constraint firstItem="7G8-37-fvP" firstAttribute="top" secondItem="oPe-i0-9I6" secondAttribute="bottom" constant="20" id="moc-zq-DtV"/>
                         </constraints>
@@ -110,34 +112,36 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State after loading" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aT3-TF-aaT">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="24"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                         <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="huu-kc-Em8">
                                         <rect key="frame" x="0.0" y="34" width="335" height="29"/>
                                         <segments>
-                                            <segment title="Books"/>
+                                            <segment title="Items"/>
                                             <segment title="Error"/>
                                             <segment title="Empty"/>
                                         </segments>
+                                        <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                         <connections>
                                             <action selector="stateAfterLoadingValueChangedWithSender:" destination="rBd-mq-H0b" eventType="valueChanged" id="ttp-cu-RZ7"/>
                                         </connections>
                                     </segmentedControl>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="State after retry" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="63r-v5-cel">
                                         <rect key="frame" x="0.0" y="72" width="335" height="24"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                         <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vsb-nQ-EfU">
                                         <rect key="frame" x="0.0" y="106" width="335" height="29"/>
                                         <segments>
-                                            <segment title="Books"/>
+                                            <segment title="Items"/>
                                             <segment title="Error"/>
                                             <segment title="Empty"/>
                                         </segments>
+                                        <color key="tintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                         <connections>
                                             <action selector="stateAfterRetryValueChangedWithSender:" destination="rBd-mq-H0b" eventType="valueChanged" id="xOY-8d-7wA"/>
                                         </connections>
@@ -149,8 +153,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="1am-js-GOq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <state key="normal" title="Continue"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                </state>
                                 <connections>
                                     <action selector="doContinue" destination="rBd-mq-H0b" eventType="touchUpInside" id="tE0-Ty-JFi"/>
                                 </connections>
@@ -176,24 +182,24 @@
             </objects>
             <point key="canvasLocation" x="-814" y="-197"/>
         </scene>
-        <!--Empty View Controller-->
+        <!--Empty Controller-->
         <scene sceneID="R0T-rf-8Kt">
             <objects>
-                <viewController storyboardIdentifier="EmptyViewController" id="xoL-OD-sK2" customClass="EmptyViewController" customModule="StateMachine" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EmptyController" id="xoL-OD-sK2" customClass="EmptyController" customModule="StateMachine" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3dk-ay-vZM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMPTY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFA-pU-HON">
-                                <rect key="frame" x="137" y="170" width="101.5" height="36"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
-                                <color key="textColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nFA-pU-HON">
+                                <rect key="frame" x="147.5" y="235.5" width="80.5" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.94646924734115601" green="0.95565694570541382" blue="0.81788575649261475" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="nFA-pU-HON" firstAttribute="top" secondItem="jvo-5t-9e5" secondAttribute="top" constant="150" id="5YK-rS-3ll"/>
+                            <constraint firstItem="nFA-pU-HON" firstAttribute="centerY" secondItem="3dk-ay-vZM" secondAttribute="centerY" constant="-80" id="1lF-y2-AKw"/>
                             <constraint firstItem="nFA-pU-HON" firstAttribute="centerX" secondItem="jvo-5t-9e5" secondAttribute="centerX" id="e6I-2z-2ef"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jvo-5t-9e5"/>

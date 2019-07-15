@@ -20,6 +20,10 @@
 		60A6712B22DC8FF600B781A1 /* StateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6712A22DC8FF600B781A1 /* StateController.swift */; };
 		60A6712D22DC905600B781A1 /* StateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6712C22DC905600B781A1 /* StateProvider.swift */; };
 		60A6712F22DC914C00B781A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60A6712E22DC914C00B781A1 /* Main.storyboard */; };
+		60A6714D22DCB10300B781A1 /* EmptyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6714922DCB10300B781A1 /* EmptyController.swift */; };
+		60A6714E22DCB10300B781A1 /* ErrorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6714A22DCB10300B781A1 /* ErrorController.swift */; };
+		60A6714F22DCB10300B781A1 /* ItemListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6714B22DCB10300B781A1 /* ItemListController.swift */; };
+		60A6715022DCB10300B781A1 /* ItemStateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6714C22DCB10300B781A1 /* ItemStateProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		60A6712A22DC8FF600B781A1 /* StateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateController.swift; sourceTree = "<group>"; };
 		60A6712C22DC905600B781A1 /* StateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateProvider.swift; sourceTree = "<group>"; };
 		60A6712E22DC914C00B781A1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		60A6714922DCB10300B781A1 /* EmptyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyController.swift; sourceTree = "<group>"; };
+		60A6714A22DCB10300B781A1 /* ErrorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorController.swift; sourceTree = "<group>"; };
+		60A6714B22DCB10300B781A1 /* ItemListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListController.swift; sourceTree = "<group>"; };
+		60A6714C22DCB10300B781A1 /* ItemStateProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemStateProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,8 +80,8 @@
 		605472C322DA35DA00507202 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				60A6713022DC915900B781A1 /* Assets */,
 				605472C922DA35DA00507202 /* Info.plist */,
+				60A6713022DC915900B781A1 /* Assets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -83,6 +91,7 @@
 			children = (
 				605472CC22DA35DA00507202 /* AppDelegate.swift */,
 				605472CB22DA35DA00507202 /* SettingsController.swift */,
+				60A6714722DCB10300B781A1 /* View */,
 				60A6711F22DC8E7200B781A1 /* State */,
 				60A6711E22DC8E5800B781A1 /* Utils */,
 			);
@@ -118,6 +127,25 @@
 				60A6712E22DC914C00B781A1 /* Main.storyboard */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		60A6714722DCB10300B781A1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				60A6714C22DCB10300B781A1 /* ItemStateProvider.swift */,
+				60A6714822DCB10300B781A1 /* Item */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		60A6714822DCB10300B781A1 /* Item */ = {
+			isa = PBXGroup;
+			children = (
+				60A6714922DCB10300B781A1 /* EmptyController.swift */,
+				60A6714A22DCB10300B781A1 /* ErrorController.swift */,
+				60A6714B22DCB10300B781A1 /* ItemListController.swift */,
+			);
+			path = Item;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,6 +221,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				60A6712522DC8F4D00B781A1 /* UIStoryboard.swift in Sources */,
+				60A6714D22DCB10300B781A1 /* EmptyController.swift in Sources */,
+				60A6715022DCB10300B781A1 /* ItemStateProvider.swift in Sources */,
+				60A6714E22DCB10300B781A1 /* ErrorController.swift in Sources */,
 				60A6712722DC8F8700B781A1 /* UIViewController.swift in Sources */,
 				605472D322DA35DB00507202 /* AppDelegate.swift in Sources */,
 				60A6712122DC8EA400B781A1 /* LoadingHandler.swift in Sources */,
@@ -200,6 +231,7 @@
 				60A6712D22DC905600B781A1 /* StateProvider.swift in Sources */,
 				60A6712B22DC8FF600B781A1 /* StateController.swift in Sources */,
 				605472D222DA35DB00507202 /* SettingsController.swift in Sources */,
+				60A6714F22DCB10300B781A1 /* ItemListController.swift in Sources */,
 				60A6712922DC8FD700B781A1 /* StateChanger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
