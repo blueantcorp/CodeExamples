@@ -37,7 +37,7 @@ enum State: Int {
 	case empty
 }
 
-class StateContainerController: UIViewController, StateChanger {
+class StateController: UIViewController, StateChanger {
 	
 	private let stateProvider: StateProvider
 	private var currentState: State?
