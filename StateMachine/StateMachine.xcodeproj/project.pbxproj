@@ -17,6 +17,9 @@
 		60A6712322DC8F1600B781A1 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6712222DC8F1600B781A1 /* Settings.swift */; };
 		60A6712522DC8F4D00B781A1 /* UIStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6712422DC8F4D00B781A1 /* UIStoryboard.swift */; };
 		60A6712722DC8F8700B781A1 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6712622DC8F8700B781A1 /* UIViewController.swift */; };
+		60A6712922DC8FD700B781A1 /* StateChanger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6712822DC8FD700B781A1 /* StateChanger.swift */; };
+		60A6712B22DC8FF600B781A1 /* StateContainerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6712A22DC8FF600B781A1 /* StateContainerController.swift */; };
+		60A6712D22DC905600B781A1 /* StateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A6712C22DC905600B781A1 /* StateProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		60A6712222DC8F1600B781A1 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		60A6712422DC8F4D00B781A1 /* UIStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboard.swift; sourceTree = "<group>"; };
 		60A6712622DC8F8700B781A1 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		60A6712822DC8FD700B781A1 /* StateChanger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateChanger.swift; sourceTree = "<group>"; };
+		60A6712A22DC8FF600B781A1 /* StateContainerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateContainerController.swift; sourceTree = "<group>"; };
+		60A6712C22DC905600B781A1 /* StateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +105,9 @@
 		60A6711F22DC8E7200B781A1 /* State */ = {
 			isa = PBXGroup;
 			children = (
+				60A6712822DC8FD700B781A1 /* StateChanger.swift */,
+				60A6712A22DC8FF600B781A1 /* StateContainerController.swift */,
+				60A6712C22DC905600B781A1 /* StateProvider.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -180,7 +189,10 @@
 				605472D322DA35DB00507202 /* AppDelegate.swift in Sources */,
 				60A6712122DC8EA400B781A1 /* LoadingHandler.swift in Sources */,
 				60A6712322DC8F1600B781A1 /* Settings.swift in Sources */,
+				60A6712D22DC905600B781A1 /* StateProvider.swift in Sources */,
+				60A6712B22DC8FF600B781A1 /* StateContainerController.swift in Sources */,
 				605472D222DA35DB00507202 /* SettingsController.swift in Sources */,
+				60A6712922DC8FD700B781A1 /* StateChanger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
