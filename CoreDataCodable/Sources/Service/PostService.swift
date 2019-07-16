@@ -65,6 +65,7 @@ extension PostService {
 			}
 			
 			let decoder = JSONDecoder()
+			decoder.dateDecodingStrategy = .iso8601
 			decoder.userInfo[context] =  CoreDataStore.shared.context
 			let posts = try! decoder.decode([Post].self, from: data!)
 			CoreDataStore.shared.saveContext()

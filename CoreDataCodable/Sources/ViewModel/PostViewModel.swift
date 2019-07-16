@@ -32,19 +32,28 @@
 import Foundation
 
 struct PostViewModel: Equatable {
+	let identifier: UUID
 	let title: String
 	let descr: String
+	let image: String
+	let published: Date
 	let visible: Bool
 	
 	init(_ post: Post) {
+		identifier = post.identifier
 		title = post.title
 		descr = post.descr
+		image = post.image
+		published = post.published
 		visible = post.visible
 	}
 }
 
 func ==(lhs: PostViewModel, rhs: PostViewModel) -> Bool {
-	return lhs.title == rhs.title
+	return lhs.identifier == rhs.identifier
+		&& lhs.title == rhs.title
 		&& lhs.descr == rhs.descr
+		&& lhs.image == rhs.image
+		&& lhs.published == rhs.published
 		&& lhs.visible == rhs.visible
 }
