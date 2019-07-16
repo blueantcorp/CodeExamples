@@ -35,9 +35,25 @@ class ViewController: UIViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view.
+		registerSettingsBundle()
+		NotificationCenter.default.addObserver(self,
+											   selector: #selector(ViewController.defaultsChanged),
+											   name: UserDefaults.didChangeNotification,
+											   object: nil)
+		defaultsChanged()
 	}
-
-
+	func registerSettingsBundle(){
+		let appDefaults = [String: AnyObject]()
+		UserDefaults.standard.register(defaults: appDefaults)
+	}
+	@objc func defaultsChanged(){
+		if UserDefaults.standard.bool(forKey: "RedThemeKey") {
+			self.view.backgroundColor = UIColor.red
+			
+		}
+		else {
+			self.view.backgroundColor = UIColor.green
+		}
+	}
 }
 

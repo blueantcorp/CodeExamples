@@ -31,33 +31,40 @@
 
 import Foundation
 
-struct SettingsBundleManager {
+struct SettingsManager {
 	
-	public static let shared = SettingsBundleManager()
+	public static let shared = SettingsManager()
 	
-	struct SettingsBundleKeys {
-		static let Reset = "RESET_APP_KEY"
-		static let BuildVersionKey = "build_preference"
-		static let AppVersionKey = "version_preference"
-		static let RedThemeKey = "RedThemeKey"
-		
+	private enum Settings: String {
+		case reset = "reset"
+	}
+	
+	init() {
+		let appDefaults = [String: AnyObject]()
+		UserDefaults.standard.register(defaults: appDefaults)
 	}
 	
 	func checkAndExecuteSettings() {
-		if UserDefaults.standard.bool(forKey: SettingsBundleKeys.Reset) {
-			UserDefaults.standard.set(false, forKey: SettingsBundleKeys.Reset)
-			let appDomain: String? = Bundle.main.bundleIdentifier
-			UserDefaults.standard.removePersistentDomain(forName: appDomain!)
+		
+		// Reset App
+		if UserDefaults.standard.bool(forKey: Settings.reset.rawValue) {
+			
 			// reset userDefaults..
-			// CoreDataDataModel().deleteAllData()
-			// delete all other user data here..
+			removePersistentDomain()
+			
+			// Delete all user data here..
+			// CoreDataModel.shared.deleteAll()
+			// FileManager.shared.deleteAll()
+			
+			// Complete reset operation
+			UserDefaults.standard.set(false, forKey: Settings.reset.rawValue)
+			UserDefaults.standard.synchronize()
 		}
 	}
 	
-	func setVersionAndBuildNumber() {
-		let version: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
-		UserDefaults.standard.set(version, forKey: "version_preference")
-		let build: String = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as! String
-		UserDefaults.standard.set(build, forKey: "build_preference")
+	// Remove all UserDefaults data
+	private func removePersistentDomain() {
+		let appDomain: String? = Bundle.main.bundleIdentifier
+		UserDefaults.standard.removePersistentDomain(forName: appDomain!)
 	}
 }
