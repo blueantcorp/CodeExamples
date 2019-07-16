@@ -20,7 +20,7 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: 9E203FB5-1DF9-4846-9F18-4FC640A4BFB0
+//	ID: D953CD40-267B-4938-937F-368D49EFAEEA
 //
 //	Pkg: CoreDataCodable
 //
@@ -29,31 +29,17 @@
 //	MacOS: 10.15
 //
 
-import UIKit
+import Foundation
 
-class PostListViewController: UITableViewController {
+extension Date {
 	
-	private var model: PostViewModel?
-
-}
-
-// MARK: UITableViewDataSource
-extension PostListViewController {
-	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 5
-	}
-	
-	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		
-		let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-		cell.textLabel?.text = "Post"
-		cell.detailTextLabel?.text = "Published: 12/12/2019"
-		return cell
-		
-//		if let viewModel = userController?.item(at: indexPath.row) {
-//			cell.textLabel?.text = "\(viewModel.username) - \(viewModel.role)"
-//		} else {
-//			cell.textLabel?.text = "???"
-//		}
+	/// Convert Date to string
+	/// - parameter format: String format e.g. "yyyy-MM-dd"
+	/// - returns: Formatted Date string
+	func toString(_ format: String = "yyyy-MMM-dd") -> String {
+		let dateFormatter = DateFormatter()
+		dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+		dateFormatter.dateFormat = format
+		return dateFormatter.string(from: self)
 	}
 }
