@@ -43,8 +43,9 @@ extension PostListController {
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		
-		let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.identifier, for: indexPath)
+		let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 		cell.textLabel?.text = "Post"
+		cell.detailTextLabel?.text = "Published: 12/12/2019"
 		return cell
 		
 //		if let viewModel = userController?.item(at: indexPath.row) {
