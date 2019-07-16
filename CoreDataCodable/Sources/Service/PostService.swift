@@ -20,7 +20,7 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: 9E203FB5-1DF9-4846-9F18-4FC640A4BFB0
+//	ID: 8E22663F-99D9-47C7-8693-0B49F79B2467
 //
 //	Pkg: CoreDataCodable
 //
@@ -29,27 +29,13 @@
 //	MacOS: 10.15
 //
 
-import UIKit
+import Foundation
 
-class PostListController: UITableViewController {
+struct PostService {
 	
-	private var items: [PostViewModel]?
+	public static var shared = PostService()
 	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-	}
-}
-
-// MARK: UITableViewDataSource
-extension PostListController {
-	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return items?.count ?? 0
-	}
-	
-	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-		cell.textLabel?.text = items?[indexPath.row].title
-		cell.detailTextLabel?.text = items?[indexPath.row].published.toString()
-		return cell
+	public func fetchPosts(completion: @escaping ([Post]) -> Void) {
+		
 	}
 }
