@@ -33,6 +33,8 @@ import UIKit
 
 class ViewController: UIViewController {
 	
+	@IBOutlet weak var environmentLabel: UILabel!
+	
 	private let settings = SettingsManager.shared
 
 	override func viewDidLoad() {
@@ -44,20 +46,14 @@ class ViewController: UIViewController {
 											   name: UserDefaults.didChangeNotification,
 											   object: nil)
 		
-		// Get env
-		let preferredEnvironment = settings.preferredEnvironment()
-		let environment = settings.enviromentUrl(preferredEnvironment)
-		print(environment?.absoluteString)
+		// Update view
+		defaultsChanged()
 	}
 
 	@objc func defaultsChanged() {
-		if UserDefaults.standard.bool(forKey: "RedThemeKey") {
-			self.view.backgroundColor = UIColor.red
-			
-		}
-		else {
-			self.view.backgroundColor = UIColor.green
-		}
+		let preferredEnvironment = settings.preferredEnvironment()
+		let environment = settings.enviromentUrl(preferredEnvironment)
+		environmentLabel.text = environment?.absoluteString
 	}
 }
 
