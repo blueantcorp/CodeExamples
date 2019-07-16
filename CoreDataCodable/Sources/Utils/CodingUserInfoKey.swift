@@ -20,40 +20,18 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: 8618967C-0057-4A32-9830-314FAF515DA1
+//	ID: 0DC7A7A1-A75A-408D-80AE-8CAE15802AC5
 //
-//	Pkg: SettingsBundle
+//	Pkg: CoreDataCodable
 //
 //	Swift: 5.0 
 //
 //	MacOS: 10.15
 //
 
-import UIKit
+import Foundation
 
-class ViewController: UIViewController {
-	
-	@IBOutlet weak var environmentLabel: UILabel!
-	
-	private let settings = SettingsManager.shared
-
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		
-		// Listen to UserDefaults changes
-		NotificationCenter.default.addObserver(self,
-											   selector: #selector(defaultsChanged),
-											   name: UserDefaults.didChangeNotification,
-											   object: nil)
-		
-		// Update view
-		defaultsChanged()
-	}
-
-	@objc func defaultsChanged() {
-		let preferredEnvironment = settings.preferredEnvironment()
-		let environment = settings.enviromentUrl(preferredEnvironment)
-		environmentLabel.text = environment?.absoluteString
-	}
+public extension CodingUserInfoKey {
+	// Helper property to retrieve the Core Data managed object context
+	static let context = CodingUserInfoKey(rawValue: "managedObjectContext")
 }
-
