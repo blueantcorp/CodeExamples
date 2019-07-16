@@ -32,19 +32,19 @@
 import Foundation
 
 struct PostViewModel: Equatable {
-	let heading: String
+	let title: String
 	let published: Date
 	let visible: Bool
 	
 	init(_ post: Post) {
-		heading = post.heading
+		title = post.title
 		published = post.published
 		visible = post.visible
 	}
 }
 
 func ==(lhs: PostViewModel, rhs: PostViewModel) -> Bool {
-	return lhs.heading == rhs.heading
+	return lhs.title == rhs.title
 		&& lhs.published == rhs.published
 		&& lhs.visible == rhs.visible
 }
