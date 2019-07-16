@@ -1,6 +1,6 @@
 # Settings Bundle
 
-Example of how to use settings bundle in an app
+Application settings bundle implementation example
 
 ## Instructions
 

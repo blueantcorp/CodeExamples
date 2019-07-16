@@ -13,6 +13,8 @@
 		60E3B16A22DD92D0002AB617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60E3B16122DD92D0002AB617 /* Assets.xcassets */; };
 		60E3B16B22DD92D0002AB617 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E3B16222DD92D0002AB617 /* LaunchScreen.storyboard */; };
 		60E3B16C22DD92D0002AB617 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60E3B16422DD92D0002AB617 /* Main.storyboard */; };
+		60E3B16F22DD9FFB002AB617 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 60E3B16E22DD9FFB002AB617 /* Settings.bundle */; };
+		60E3B17122DDA6D2002AB617 /* SettingsBundleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E3B17022DDA6D2002AB617 /* SettingsBundleManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		60E3B16322DD92D0002AB617 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60E3B16522DD92D0002AB617 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		60E3B16622DD92D0002AB617 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60E3B16E22DD9FFB002AB617 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		60E3B17022DDA6D2002AB617 /* SettingsBundleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsBundleManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +62,9 @@
 		60E3B15B22DD92D0002AB617 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				60E3B15C22DD92D0002AB617 /* ViewController.swift */,
 				60E3B15D22DD92D0002AB617 /* AppDelegate.swift */,
+				60E3B15C22DD92D0002AB617 /* ViewController.swift */,
+				60E3B17022DDA6D2002AB617 /* SettingsBundleManager.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -69,6 +74,7 @@
 			children = (
 				60E3B16622DD92D0002AB617 /* Info.plist */,
 				60E3B16022DD92D0002AB617 /* Assets */,
+				60E3B16E22DD9FFB002AB617 /* Settings.bundle */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -143,6 +149,7 @@
 			files = (
 				60E3B16B22DD92D0002AB617 /* LaunchScreen.storyboard in Resources */,
 				60E3B16A22DD92D0002AB617 /* Assets.xcassets in Resources */,
+				60E3B16F22DD9FFB002AB617 /* Settings.bundle in Resources */,
 				60E3B16922DD92D0002AB617 /* README.md in Resources */,
 				60E3B16C22DD92D0002AB617 /* Main.storyboard in Resources */,
 			);
@@ -156,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60E3B16822DD92D0002AB617 /* AppDelegate.swift in Sources */,
+				60E3B17122DDA6D2002AB617 /* SettingsBundleManager.swift in Sources */,
 				60E3B16722DD92D0002AB617 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
