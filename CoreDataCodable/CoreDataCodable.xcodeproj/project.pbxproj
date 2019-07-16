@@ -16,6 +16,7 @@
 		60E3B19922DDDE20002AB617 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 60E3B19822DDDE20002AB617 /* README.md */; };
 		60F6DB3722DDE928008605C4 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F6DB3622DDE928008605C4 /* Post.swift */; };
 		60F6DB3A22DDEB37008605C4 /* CodingUserInfoKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F6DB3922DDEB37008605C4 /* CodingUserInfoKey.swift */; };
+		60F6DB3C22DDF03B008605C4 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F6DB3B22DDF03B008605C4 /* UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		60E3B19822DDDE20002AB617 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		60F6DB3622DDE928008605C4 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		60F6DB3922DDEB37008605C4 /* CodingUserInfoKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingUserInfoKey.swift; sourceTree = "<group>"; };
+		60F6DB3B22DDF03B008605C4 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				60F6DB3922DDEB37008605C4 /* CodingUserInfoKey.swift */,
+				60F6DB3B22DDF03B008605C4 /* UIViewController.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 			files = (
 				60F6DB3A22DDEB37008605C4 /* CodingUserInfoKey.swift in Sources */,
 				60E3B18622DDDD73002AB617 /* ViewController.swift in Sources */,
+				60F6DB3C22DDF03B008605C4 /* UIViewController.swift in Sources */,
 				60E3B18422DDDD73002AB617 /* AppDelegate.swift in Sources */,
 				60E3B18C22DDDD73002AB617 /* CoreDataCodable.xcdatamodeld in Sources */,
 				60F6DB3722DDE928008605C4 /* Post.swift in Sources */,
