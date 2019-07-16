@@ -32,21 +32,25 @@
 import UIKit
 
 class ViewController: UIViewController {
+	
+	private let settings = SettingsManager.shared
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		registerSettingsBundle()
+		
+		// Listen to UserDefaults changes
 		NotificationCenter.default.addObserver(self,
-											   selector: #selector(ViewController.defaultsChanged),
+											   selector: #selector(defaultsChanged),
 											   name: UserDefaults.didChangeNotification,
 											   object: nil)
-		defaultsChanged()
+		
+		// Get env
+		let preferredEnvironment = settings.preferredEnvironment()
+		let environment = settings.enviromentUrl(preferredEnvironment)
+		print(environment?.absoluteString)
 	}
-	func registerSettingsBundle(){
-		let appDefaults = [String: AnyObject]()
-		UserDefaults.standard.register(defaults: appDefaults)
-	}
-	@objc func defaultsChanged(){
+
+	@objc func defaultsChanged() {
 		if UserDefaults.standard.bool(forKey: "RedThemeKey") {
 			self.view.backgroundColor = UIColor.red
 			

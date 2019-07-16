@@ -36,7 +36,13 @@ struct SettingsManager {
 	public static let shared = SettingsManager()
 	
 	private enum Settings: String {
-		case reset = "reset"
+		case reset = "reset_preference"
+	}
+	
+	enum Environment: String {
+		case production
+		case staging
+		case development
 	}
 	
 	init() {
@@ -60,6 +66,25 @@ struct SettingsManager {
 			UserDefaults.standard.set(false, forKey: Settings.reset.rawValue)
 			UserDefaults.standard.synchronize()
 		}
+	}
+	
+	// Get preferred enviroment
+	func preferredEnvironment() -> Environment {
+		if let env = UserDefaults.standard.string(forKey: "environment") {
+			return Environment(rawValue: env)!
+		}
+		return Environment.production
+	}
+	
+	// Get enviroment
+	func enviromentUrl(_ environment: Environment) -> URL? {
+		if let path = Bundle.main.url(forResource: "Environment", withExtension: "plist"),
+			let data = try? Data(contentsOf: path) {
+			if let result = try? PropertyListDecoder().decode([String: String].self, from: data) {
+				return URL(string: result[environment.rawValue] ?? "")
+			}
+		}
+		return nil
 	}
 	
 	// Remove all UserDefaults data
