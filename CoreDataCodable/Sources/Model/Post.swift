@@ -40,7 +40,7 @@ class Post: NSManagedObject, Codable {
 	}
 	
 	// Core Data Managed Object
-	@NSManaged var heading: String?
+	@NSManaged var heading: String
 	@NSManaged var published: Date
 	@NSManaged var visible: Bool
 	
@@ -59,7 +59,7 @@ class Post: NSManagedObject, Codable {
 		// Decodable
 		do {
 			let container = try decoder.container(keyedBy: CodingKeys.self)
-			self.heading = try container.decodeIfPresent(String.self, forKey: .heading)
+			self.heading = try container.decodeIfPresent(String.self, forKey: .heading)!
 			self.published = try container.decodeIfPresent(Date.self, forKey: .published)!
 			self.visible = try container.decodeIfPresent(Bool.self, forKey: .visible)!
 		} catch (let error) {
