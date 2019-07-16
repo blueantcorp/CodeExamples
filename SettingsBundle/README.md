@@ -1,6 +1,6 @@
 # Settings Bundle
+Managing environments using Settings.plist bundle
 
-Application settings bundle implementation example
 
 ## Instructions
 
