@@ -31,12 +31,14 @@
 
 import UIKit
 
-class PostListController: UITableViewController {
+class PostListViewController: UITableViewController {
+	
+	private var model: PostViewModel?
 
 }
 
 // MARK: UITableViewDataSource
-extension PostListController {
+extension PostListViewController {
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		return 5
 	}
