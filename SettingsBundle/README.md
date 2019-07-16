@@ -1,6 +1,6 @@
-# State Machine
+# Settings Bundle
+Managing environments using Settings.plist bundle
 
-Basic state machine implementation in Swift
 
 ## Instructions
 
@@ -12,4 +12,3 @@ Open and run the Xcode project on simulator or device
 - iOS 12.2
 - No external libraries
 - Xcode 10.2.1
-
