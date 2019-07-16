@@ -33,18 +33,18 @@ import Foundation
 
 struct PostViewModel: Equatable {
 	let title: String
-	let published: Date
+	let descr: String
 	let visible: Bool
 	
 	init(_ post: Post) {
 		title = post.title
-		published = post.published
+		descr = post.descr
 		visible = post.visible
 	}
 }
 
 func ==(lhs: PostViewModel, rhs: PostViewModel) -> Bool {
 	return lhs.title == rhs.title
-		&& lhs.published == rhs.published
+		&& lhs.descr == rhs.descr
 		&& lhs.visible == rhs.visible
 }

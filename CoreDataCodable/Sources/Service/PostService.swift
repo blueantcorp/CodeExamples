@@ -32,16 +32,27 @@
 import Foundation
 
 class PostService {
+	
 	private let stubDataURL = "http://5d2dbfb843c343001498d42e.mockapi.io/api/v1/Post"
 	public static var shared = PostService()
 	
-	public func fetchPosts(completion: @escaping (_ posts: [PostViewModel]?, _ error: Error?) -> Void) {
+	public func fetchPosts(completion: @escaping (_ posts: [PostViewModel]) -> Void) {
+		
 		get(stubDataURL) { posts, error in
-			completion(posts, error)
+			
+			let cached: [Post] = CoreDataStore.shared.fetchItems()
+			let result = cached.map { post in
+				PostViewModel(post)
+			}
+			
+			completion(result)
 		}
 	}
-	
-	private func get(_ urlString: String, completion: @escaping (_ posts: [PostViewModel]?, _ error: Error?) -> Void) {
+}
+
+// MARK: - Service
+extension PostService {
+	private func get(_ urlString: String, completion: @escaping (_ posts: [Post]?, _ error: Error?) -> Void) {
 		guard let url = URL(string: urlString) else {
 			return
 		}
@@ -49,11 +60,15 @@ class PostService {
 		let urlRequest = URLRequest(url: url)
 		let task = URLSession.shared.dataTask(with: urlRequest) { (data, _, error) in
 			
-			let posts = try! JSONDecoder().decode([Post].self, from: data!)
-			let result = posts.map { post in
-				PostViewModel(post)
+			guard let context = CodingUserInfoKey.context else {
+				fatalError("Failed to retrieve managed object context")
 			}
-			completion(result, nil)
+			
+			let decoder = JSONDecoder()
+			decoder.userInfo[context] =  CoreDataStore.shared.context
+			let posts = try! decoder.decode([Post].self, from: data!)
+			CoreDataStore.shared.saveContext()
+			completion(posts, nil)
 		}
 		task.resume()
 	}

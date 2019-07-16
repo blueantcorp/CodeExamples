@@ -37,11 +37,12 @@ class PostListController: UITableViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
-		// Load posts
-		PostService.shared.fetchPosts { posts, error in
+
+		PostService.shared.fetchPosts { posts in
 			self.items = posts
-			self.tableView.reloadData()
+			DispatchQueue.main.sync {
+				self.tableView.reloadData()
+			}
 		}
 	}
 }
@@ -55,7 +56,7 @@ extension PostListController {
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 		cell.textLabel?.text = items?[indexPath.row].title
-		cell.detailTextLabel?.text = items?[indexPath.row].published.toString()
+		cell.detailTextLabel?.text = items?[indexPath.row].descr
 		return cell
 	}
 }

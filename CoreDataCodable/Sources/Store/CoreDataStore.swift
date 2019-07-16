@@ -38,7 +38,7 @@ class CoreDataStore {
 	
 	// Core Data stack
 	lazy var persistentContainer: NSPersistentContainer = {
-		let container = NSPersistentContainer(name: "Post")
+		let container = NSPersistentContainer(name: "CoreDataCodable")
 		container.loadPersistentStores { (storeDescription, error) in
 			if let error = error as NSError? {
 				fatalError("Unresolved error \(error), \(error.userInfo)")
