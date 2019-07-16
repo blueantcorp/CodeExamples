@@ -19,6 +19,7 @@
 		60F6DB3C22DDF03B008605C4 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F6DB3B22DDF03B008605C4 /* UIViewController.swift */; };
 		60F6DB3F22DDF0D2008605C4 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F6DB3E22DDF0D2008605C4 /* PostViewModel.swift */; };
 		60F6DB4522DDFBC1008605C4 /* CoreDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F6DB4422DDFBC1008605C4 /* CoreDataStore.swift */; };
+		60F6DB4922DDFE61008605C4 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F6DB4822DDFE61008605C4 /* ReusableCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		60F6DB3B22DDF03B008605C4 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		60F6DB3E22DDF0D2008605C4 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
 		60F6DB4422DDFBC1008605C4 /* CoreDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStore.swift; sourceTree = "<group>"; };
+		60F6DB4822DDFE61008605C4 /* ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +77,7 @@
 				60F6DB3D22DDF0B8008605C4 /* ViewModel */,
 				60F6DB3522DDE82A008605C4 /* Model */,
 				60F6DB4322DDFAE7008605C4 /* Store */,
-				60F6DB3822DDEB27008605C4 /* Extensions */,
+				60F6DB3822DDEB27008605C4 /* Utils */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -116,13 +118,13 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		60F6DB3822DDEB27008605C4 /* Extensions */ = {
+		60F6DB3822DDEB27008605C4 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				60F6DB3922DDEB37008605C4 /* CodingUserInfoKey.swift */,
-				60F6DB3B22DDF03B008605C4 /* UIViewController.swift */,
+				60F6DB4722DDFE3E008605C4 /* Protocols */,
+				60F6DB4622DDFE34008605C4 /* Extensions */,
 			);
-			path = Extensions;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		60F6DB3D22DDF0B8008605C4 /* ViewModel */ = {
@@ -147,6 +149,23 @@
 				60F6DB4422DDFBC1008605C4 /* CoreDataStore.swift */,
 			);
 			path = Store;
+			sourceTree = "<group>";
+		};
+		60F6DB4622DDFE34008605C4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				60F6DB3922DDEB37008605C4 /* CodingUserInfoKey.swift */,
+				60F6DB3B22DDF03B008605C4 /* UIViewController.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		60F6DB4722DDFE3E008605C4 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				60F6DB4822DDFE61008605C4 /* ReusableCell.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,6 +248,7 @@
 				60E3B18C22DDDD73002AB617 /* CoreDataCodable.xcdatamodeld in Sources */,
 				60F6DB4522DDFBC1008605C4 /* CoreDataStore.swift in Sources */,
 				60F6DB3722DDE928008605C4 /* Post.swift in Sources */,
+				60F6DB4922DDFE61008605C4 /* ReusableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

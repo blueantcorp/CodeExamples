@@ -20,7 +20,7 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: 9E203FB5-1DF9-4846-9F18-4FC640A4BFB0
+//	ID: EE4CCFF1-57A6-47E7-B113-51E37F1FB3E6
 //
 //	Pkg: CoreDataCodable
 //
@@ -31,26 +31,14 @@
 
 import UIKit
 
-class PostListController: UITableViewController {
-
+public protocol ReusableCell {
+	static var identifier: String { get }
 }
 
-// MARK: UITableViewDataSource
-extension PostListController {
-	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 5
-	}
-	
-	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		
-		let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCell.identifier, for: indexPath)
-		cell.textLabel?.text = "Post"
-		return cell
-		
-//		if let viewModel = userController?.item(at: indexPath.row) {
-//			cell.textLabel?.text = "\(viewModel.username) - \(viewModel.role)"
-//		} else {
-//			cell.textLabel?.text = "???"
-//		}
+public extension ReusableCell {
+	static var identifier: String {
+		return String(describing: self)
 	}
 }
+
+extension UITableViewCell: ReusableCell {}

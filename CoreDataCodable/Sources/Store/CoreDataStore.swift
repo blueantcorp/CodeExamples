@@ -76,7 +76,6 @@ extension CoreDataStore {
 	}
 	
 	func fetchItems<T>(predicate: String? = nil) -> [T] {
-		
 		let itemsFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "\(T.self)")
 		
 		if let predicate = predicate {
