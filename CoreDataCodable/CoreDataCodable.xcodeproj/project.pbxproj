@@ -78,7 +78,7 @@
 				60F6DB4022DDF29F008605C4 /* View */,
 				60F6DB3D22DDF0B8008605C4 /* ViewModel */,
 				60F6DB3522DDE82A008605C4 /* Model */,
-				60F6DB5322DE3A54008605C4 /* Service */,
+				60F6DB5422DE440E008605C4 /* Service */,
 				60F6DB4322DDFAE7008605C4 /* Store */,
 				60F6DB3822DDEB27008605C4 /* Utils */,
 			);
@@ -171,7 +171,7 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		60F6DB5322DE3A54008605C4 /* Service */ = {
+		60F6DB5422DE440E008605C4 /* Service */ = {
 			isa = PBXGroup;
 			children = (
 				60F6DB5122DE3A4D008605C4 /* PostService.swift */,

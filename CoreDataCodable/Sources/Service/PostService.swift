@@ -31,11 +31,30 @@
 
 import Foundation
 
-struct PostService {
-	
+class PostService {
+	private let stubDataURL = "http://5d2dbfb843c343001498d42e.mockapi.io/api/v1/Post"
 	public static var shared = PostService()
 	
-	public func fetchPosts(completion: @escaping ([Post]) -> Void) {
+	public func fetchPosts(completion: @escaping (_ posts: [PostViewModel]?, _ error: Error?) -> Void) {
+		get(stubDataURL) { posts, error in
+			completion(posts, error)
+		}
+	}
+	
+	private func get(_ urlString: String, completion: @escaping (_ posts: [PostViewModel]?, _ error: Error?) -> Void) {
+		guard let url = URL(string: urlString) else {
+			return
+		}
 		
+		let urlRequest = URLRequest(url: url)
+		let task = URLSession.shared.dataTask(with: urlRequest) { (data, _, error) in
+			
+			let posts = try! JSONDecoder().decode([Post].self, from: data!)
+			let result = posts.map { post in
+				PostViewModel(post)
+			}
+			completion(result, nil)
+		}
+		task.resume()
 	}
 }

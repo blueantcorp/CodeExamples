@@ -37,6 +37,12 @@ class PostListController: UITableViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		// Load posts
+		PostService.shared.fetchPosts { posts, error in
+			self.items = posts
+			self.tableView.reloadData()
+		}
 	}
 }
 

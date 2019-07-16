@@ -32,9 +32,6 @@
 import UIKit
 import CoreData
 
-// API Location
-let api_url = "http://5d2dbfb843c343001498d42e.mockapi.io/api/v1/Post"
-
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 	var window: UIWindow?
