@@ -31,27 +31,27 @@
 
 import Foundation
 
-class PostService {
-	
+class PostManager {
+	public static var shared = PostManager()
 	private let stubDataURL = "http://5d2dbfb843c343001498d42e.mockapi.io/api/v1/Post"
-	public static var shared = PostService()
 	
-	public func fetchPosts(completion: @escaping (_ posts: [PostViewModel]) -> Void) {
-		
+	@discardableResult
+	public func fetchPosts(completion: @escaping (_ posts: [PostViewModel]) -> Void) -> [PostViewModel] {
 		get(stubDataURL) { posts, error in
-			
-			let cached: [Post] = CoreDataStore.shared.fetchItems()
-			let result = cached.map { post in
-				PostViewModel(post)
-			}
-			
-			completion(result)
+			completion(self.posts())
 		}
+		return posts()
+	}
+	
+	private func posts() -> [PostViewModel] {
+		let result: [Post] = CoreDataStore.shared.fetchItems()
+		return result.map { PostViewModel($0) }
+					 .sorted { $0.id < $1.id }
 	}
 }
 
 // MARK: - Service
-extension PostService {
+extension PostManager {
 	private func get(_ urlString: String, completion: @escaping (_ posts: [Post]?, _ error: Error?) -> Void) {
 		guard let url = URL(string: urlString) else {
 			return
@@ -66,8 +66,8 @@ extension PostService {
 			
 			let decoder = JSONDecoder()
 			decoder.dateDecodingStrategy = .iso8601
-			decoder.userInfo[context] =  CoreDataStore.shared.context
-			let posts = try! decoder.decode([Post].self, from: data!)
+			decoder.userInfo[context] = CoreDataStore.shared.context
+			let posts = try? decoder.decode([Post].self, from: data!)
 			CoreDataStore.shared.saveContext()
 			completion(posts, nil)
 		}
