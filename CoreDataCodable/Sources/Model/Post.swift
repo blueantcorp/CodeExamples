@@ -39,90 +39,6 @@ class Post: NSManagedObject, Codable {
 		case id, identifier, title, descr, image, published, visible
 	}
 	
-	//  @NSManaged replacement
-	public var id: Int16? {
-		get {
-			willAccessValue(forKey: "id")
-			defer { didAccessValue(forKey: "id") }
-			
-			return primitiveValue(forKey: "id") as? Int16
-		}
-		set {
-			willChangeValue(forKey: "id")
-			defer { didChangeValue(forKey: "id") }
-			
-			guard let value = newValue else {
-				setPrimitiveValue(nil, forKey: "id")
-				return
-			}
-			setPrimitiveValue(value, forKey: "id")
-		}
-	}
-	
-	//  @NSManaged replacement
-	public var identifier: UUID? {
-		get {
-			willAccessValue(forKey: "identifier")
-			defer { didAccessValue(forKey: "identifier") }
-			
-			return primitiveValue(forKey: "identifier") as? UUID
-		}
-		set {
-			willChangeValue(forKey: "identifier")
-			defer { didChangeValue(forKey: "identifier") }
-			
-			guard let value = newValue else {
-				setPrimitiveValue(nil, forKey: "identifier")
-				return
-			}
-			setPrimitiveValue(value, forKey: "identifier")
-		}
-	}
-	
-	@NSManaged var title: String?
-	@NSManaged var descr: String?
-	@NSManaged var image: String?
-	
-	// @NSManaged replacement
-	public var published: Date? {
-		get {
-			willAccessValue(forKey: "published")
-			defer { didAccessValue(forKey: "published") }
-			
-			return primitiveValue(forKey: "published") as? Date
-		}
-		set {
-			willChangeValue(forKey: "published")
-			defer { didChangeValue(forKey: "published") }
-			
-			guard let value = newValue else {
-				setPrimitiveValue(nil, forKey: "published")
-				return
-			}
-			setPrimitiveValue(value, forKey: "published")
-		}
-	}
-	
-	// @NSManaged replacement
-	public var visible: Bool? {
-		get {
-			willAccessValue(forKey: "visible")
-			defer { didAccessValue(forKey: "visible") }
-			
-			return primitiveValue(forKey: "visible") as? Bool
-		}
-		set {
-			willChangeValue(forKey: "visible")
-			defer { didChangeValue(forKey: "visible") }
-			
-			guard let value = newValue else {
-				setPrimitiveValue(nil, forKey: "visible")
-				return
-			}
-			setPrimitiveValue(value, forKey: "visible")
-		}
-	}
-	
 	// Decodable
 	required convenience init(from decoder: Decoder) throws {
 		
@@ -138,7 +54,7 @@ class Post: NSManagedObject, Codable {
 		// Decodable
 		do {
 			let container = try decoder.container(keyedBy: CodingKeys.self)
-			self.id = try container.decodeIfPresent(Int16.self, forKey: .id)
+			self.id = Int16(try container.decodeIfPresent(String.self, forKey: .id) ?? "")
 			self.identifier = try container.decodeIfPresent(UUID.self, forKey: .identifier)
 			self.title = try container.decodeIfPresent(String.self, forKey: .title)
 			self.descr = try container.decodeIfPresent(String.self, forKey: .descr)
@@ -160,5 +76,85 @@ class Post: NSManagedObject, Codable {
 		try container.encode(image, forKey: .image)
 		try container.encode(published, forKey: .published)
 		try container.encode(visible, forKey: .visible)
+	}
+}
+
+// MARK: - Properties
+extension Post {
+	
+	//  @NSManaged replacement for optionals
+	public var id: Int16? {
+		get {
+			willAccessValue(forKey: "id")
+			defer {didAccessValue(forKey: "id")}
+			return primitiveValue(forKey: "id") as? Int16
+		}
+		set {
+			willChangeValue(forKey: "id")
+			defer {didChangeValue(forKey: "id")}
+			guard let value = newValue else {
+				setPrimitiveValue(nil, forKey: "id")
+				return
+			}
+			setPrimitiveValue(value, forKey: "id")
+		}
+	}
+	
+	//  @NSManaged replacement for optionals
+	public var identifier: UUID? {
+		get {
+			willAccessValue(forKey: "identifier")
+			defer {didAccessValue(forKey: "identifier")}
+			return primitiveValue(forKey: "identifier") as? UUID
+		}
+		set {
+			willChangeValue(forKey: "identifier")
+			defer {didChangeValue(forKey: "identifier")}
+			guard let value = newValue else {
+				setPrimitiveValue(nil, forKey: "identifier")
+				return
+			}
+			setPrimitiveValue(value, forKey: "identifier")
+		}
+	}
+	
+	@NSManaged var title: String?
+	@NSManaged var descr: String?
+	@NSManaged var image: String?
+	
+	// @NSManaged replacement for optionals
+	public var published: Date? {
+		get {
+			willAccessValue(forKey: "published")
+			defer {didAccessValue(forKey: "published")}
+			return primitiveValue(forKey: "published") as? Date
+		}
+		set {
+			willChangeValue(forKey: "published")
+			defer {didChangeValue(forKey: "published")}
+			guard let value = newValue else {
+				setPrimitiveValue(nil, forKey: "published")
+				return
+			}
+			setPrimitiveValue(value, forKey: "published")
+		}
+	}
+	
+	// @NSManaged replacement for optionals
+	public var visible: Bool? {
+		get {
+			willAccessValue(forKey: "visible")
+			defer {didAccessValue(forKey: "visible")}
+			return primitiveValue(forKey: "visible") as? Bool
+		}
+		set {
+			willChangeValue(forKey: "visible")
+			defer {didChangeValue(forKey: "visible")}
+			guard let value = newValue else {
+				setPrimitiveValue(nil, forKey: "visible")
+				return
+			}
+			setPrimitiveValue(value, forKey: "visible")
+		}
 	}
 }
