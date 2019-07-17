@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		60E3B16722DD92D0002AB617 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E3B15C22DD92D0002AB617 /* ViewController.swift */; };
+		60E3B16722DD92D0002AB617 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E3B15C22DD92D0002AB617 /* MainViewController.swift */; };
 		60E3B16822DD92D0002AB617 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E3B15D22DD92D0002AB617 /* AppDelegate.swift */; };
 		60E3B16922DD92D0002AB617 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 60E3B15E22DD92D0002AB617 /* README.md */; };
 		60E3B16A22DD92D0002AB617 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60E3B16122DD92D0002AB617 /* Assets.xcassets */; };
@@ -20,7 +20,7 @@
 
 /* Begin PBXFileReference section */
 		60E3B14622DD91E9002AB617 /* SettingsBundle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SettingsBundle.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		60E3B15C22DD92D0002AB617 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		60E3B15C22DD92D0002AB617 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		60E3B15D22DD92D0002AB617 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60E3B15E22DD92D0002AB617 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		60E3B16122DD92D0002AB617 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -65,7 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				60E3B15D22DD92D0002AB617 /* AppDelegate.swift */,
-				60E3B15C22DD92D0002AB617 /* ViewController.swift */,
+				60E3B15C22DD92D0002AB617 /* MainViewController.swift */,
 				60E3B17222DDBD84002AB617 /* Managers */,
 			);
 			path = Sources;
@@ -176,7 +176,7 @@
 			files = (
 				60E3B16822DD92D0002AB617 /* AppDelegate.swift in Sources */,
 				60E3B17122DDA6D2002AB617 /* SettingsManager.swift in Sources */,
-				60E3B16722DD92D0002AB617 /* ViewController.swift in Sources */,
+				60E3B16722DD92D0002AB617 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

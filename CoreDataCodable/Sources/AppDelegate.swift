@@ -20,9 +20,9 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: 8618967C-0057-4A32-9830-314FAF515DA1
+//	ID: 9E203FB5-1DF9-4846-9F18-4FC640A4BFB0
 //
-//	Pkg: SettingsBundle
+//	Pkg: CoreDataCodable
 //
 //	Swift: 5.0 
 //
@@ -30,30 +30,9 @@
 //
 
 import UIKit
+import CoreData
 
-class ViewController: UIViewController {
-	
-	@IBOutlet weak var environmentLabel: UILabel!
-	
-	private let settings = SettingsManager.shared
-
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		
-		// Listen to UserDefaults changes
-		NotificationCenter.default.addObserver(self,
-											   selector: #selector(defaultsChanged),
-											   name: UserDefaults.didChangeNotification,
-											   object: nil)
-		
-		// Update view
-		defaultsChanged()
-	}
-
-	@objc func defaultsChanged() {
-		let preferredEnvironment = settings.preferredEnvironment()
-		let environment = settings.enviromentUrl(preferredEnvironment)
-		environmentLabel.text = environment?.absoluteString
-	}
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+	var window: UIWindow?
 }
-
