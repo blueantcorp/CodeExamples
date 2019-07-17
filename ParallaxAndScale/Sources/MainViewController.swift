@@ -50,17 +50,12 @@ class MainViewController: UIViewController {
 	
 	private lazy var label: UILabel = {
 		let label = UILabel()
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.backgroundColor = .white
-		let titleFont = UIFont.preferredFont(forTextStyle: .title1)
-		if let boldDescriptor = titleFont.fontDescriptor.withSymbolicTraits(.traitBold) {
-			label.font = UIFont(descriptor: boldDescriptor, size: 0)
-		} else {
-			label.font = titleFont
-		}
+		label.text = "Your content here"
+		label.textColor = UIColor.lightGray
+		label.font = UIFont.systemFont(ofSize: 32, weight: .light)
 		label.textAlignment = .center
 		label.adjustsFontForContentSizeCategory = true
-		label.text = "Your content here"
+		label.translatesAutoresizingMaskIntoConstraints = false
 		return label
 	}()
 	
@@ -73,12 +68,10 @@ class MainViewController: UIViewController {
 	
 	private var headerImageView: UIImageView = {
 		let imageView = UIImageView()
-		imageView.translatesAutoresizingMaskIntoConstraints = false
 		imageView.contentMode = .scaleAspectFill
-		if let image = UIImage(named: "Image") {
-			imageView.image = image
-		}
+		imageView.image = UIImage(named: "Image")
 		imageView.clipsToBounds = true
+		imageView.translatesAutoresizingMaskIntoConstraints = false
 		return imageView
 	}()
 	
@@ -88,12 +81,11 @@ class MainViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
+		view.backgroundColor = .white
 		headerContainerView.addSubview(headerImageView)
 		scrollView.addSubview(headerContainerView)
 		scrollView.addSubview(label)
 		view.addSubview(scrollView)
-		
 		arrangeConstraints()
 	}
 }
