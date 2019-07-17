@@ -75,7 +75,7 @@ class MainViewController: UIViewController {
 		let imageView = UIImageView()
 		imageView.translatesAutoresizingMaskIntoConstraints = false
 		imageView.contentMode = .scaleAspectFill
-		if let image = UIImage(named: "Coffee") {
+		if let image = UIImage(named: "Image") {
 			imageView.image = image
 		}
 		imageView.clipsToBounds = true
