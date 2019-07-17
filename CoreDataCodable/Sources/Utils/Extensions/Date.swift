@@ -43,3 +43,21 @@ extension Date {
 		return dateFormatter.string(from: self)
 	}
 }
+
+extension String {
+	
+	/// Convert String to Date
+	/// - parameter format: String format e.g. "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+	/// - returns: Date
+	func toDate(_ format: String = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'") -> Date? {
+		let dateFormatter = DateFormatter()
+		dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
+		dateFormatter.dateFormat = format
+		
+		guard let date = dateFormatter.date(from: self) else {
+			print("Invalid format.")
+			return nil
+		}
+		return date
+	}
+}

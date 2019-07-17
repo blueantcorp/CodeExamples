@@ -41,12 +41,70 @@ class Post: NSManagedObject, Codable {
 	
 	// Core Data Managed Object
 	@NSManaged var id: Int16
-	@NSManaged var identifier: UUID
-	@NSManaged var title: String
-	@NSManaged var descr: String
-	@NSManaged var image: String
-	@NSManaged var published: Date
-	@NSManaged var visible: Bool
+	
+	//  @NSManaged replacement
+	public var identifier: UUID? {
+		get {
+			willAccessValue(forKey: "identifier")
+			defer { didAccessValue(forKey: "identifier") }
+			
+			return primitiveValue(forKey: "identifier") as? UUID
+		}
+		set {
+			willChangeValue(forKey: "identifier")
+			defer { didChangeValue(forKey: "identifier") }
+			
+			guard let value = newValue else {
+				setPrimitiveValue(nil, forKey: "identifier")
+				return
+			}
+			setPrimitiveValue(value, forKey: "identifier")
+		}
+	}
+	
+	@NSManaged var title: String?
+	@NSManaged var descr: String?
+	@NSManaged var image: String?
+	
+	// @NSManaged replacement
+	public var published: Date? {
+		get {
+			willAccessValue(forKey: "published")
+			defer { didAccessValue(forKey: "published") }
+			
+			return primitiveValue(forKey: "published") as? Date
+		}
+		set {
+			willChangeValue(forKey: "published")
+			defer { didChangeValue(forKey: "published") }
+			
+			guard let value = newValue else {
+				setPrimitiveValue(nil, forKey: "published")
+				return
+			}
+			setPrimitiveValue(value, forKey: "published")
+		}
+	}
+	
+	// @NSManaged replacement
+	public var visible: Bool? {
+		get {
+			willAccessValue(forKey: "visible")
+			defer { didAccessValue(forKey: "visible") }
+			
+			return primitiveValue(forKey: "visible") as? Bool
+		}
+		set {
+			willChangeValue(forKey: "visible")
+			defer { didChangeValue(forKey: "visible") }
+			
+			guard let value = newValue else {
+				setPrimitiveValue(nil, forKey: "visible")
+				return
+			}
+			setPrimitiveValue(value, forKey: "visible")
+		}
+	}
 	
 	// Decodable
 	required convenience init(from decoder: Decoder) throws {
@@ -64,12 +122,12 @@ class Post: NSManagedObject, Codable {
 		do {
 			let container = try decoder.container(keyedBy: CodingKeys.self)
 			self.id = Int16(try container.decodeIfPresent(String.self, forKey: .id)!)!
-			self.identifier = try container.decodeIfPresent(UUID.self, forKey: .identifier)!
-			self.title = try container.decodeIfPresent(String.self, forKey: .title)!
-			self.descr = try container.decodeIfPresent(String.self, forKey: .descr)!
-			self.image = try container.decodeIfPresent(String.self, forKey: .image)!
-			self.published = Date() //try container.decodeIfPresent(Date.self, forKey: .published)!
-			self.visible = try container.decodeIfPresent(Bool.self, forKey: .visible)!
+			self.identifier = try container.decodeIfPresent(UUID.self, forKey: .identifier)
+			self.title = try container.decodeIfPresent(String.self, forKey: .title)
+			self.descr = try container.decodeIfPresent(String.self, forKey: .descr)
+			self.image = try container.decodeIfPresent(String.self, forKey: .image)
+			self.published = try container.decodeIfPresent(String.self, forKey: .published)?.toDate()
+			self.visible = try container.decodeIfPresent(Bool.self, forKey: .visible)
 		} catch (let error) {
 			fatalError(error.localizedDescription)
 		}

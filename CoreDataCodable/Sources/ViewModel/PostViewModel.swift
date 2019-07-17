@@ -33,12 +33,12 @@ import Foundation
 
 struct PostViewModel: Equatable {
 	let id: Int16
-	let identifier: UUID
-	let title: String
-	let descr: String
-	let image: String
-	let published: Date
-	let visible: Bool
+	let identifier: UUID?
+	let title: String?
+	let descr: String?
+	let image: String?
+	let published: Date?
+	let visible: Bool?
 	
 	init(_ post: Post) {
 		id = post.id
