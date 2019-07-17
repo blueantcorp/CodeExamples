@@ -39,8 +39,25 @@ class Post: NSManagedObject, Codable {
 		case id, identifier, title, descr, image, published, visible
 	}
 	
-	// Core Data Managed Object
-	@NSManaged var id: Int16
+	//  @NSManaged replacement
+	public var id: Int16? {
+		get {
+			willAccessValue(forKey: "id")
+			defer { didAccessValue(forKey: "id") }
+			
+			return primitiveValue(forKey: "id") as? Int16
+		}
+		set {
+			willChangeValue(forKey: "id")
+			defer { didChangeValue(forKey: "id") }
+			
+			guard let value = newValue else {
+				setPrimitiveValue(nil, forKey: "id")
+				return
+			}
+			setPrimitiveValue(value, forKey: "id")
+		}
+	}
 	
 	//  @NSManaged replacement
 	public var identifier: UUID? {
@@ -121,7 +138,7 @@ class Post: NSManagedObject, Codable {
 		// Decodable
 		do {
 			let container = try decoder.container(keyedBy: CodingKeys.self)
-			self.id = Int16(try container.decodeIfPresent(String.self, forKey: .id)!)!
+			self.id = try container.decodeIfPresent(Int16.self, forKey: .id)
 			self.identifier = try container.decodeIfPresent(UUID.self, forKey: .identifier)
 			self.title = try container.decodeIfPresent(String.self, forKey: .title)
 			self.descr = try container.decodeIfPresent(String.self, forKey: .descr)

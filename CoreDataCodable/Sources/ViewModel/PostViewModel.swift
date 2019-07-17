@@ -33,21 +33,32 @@ import Foundation
 
 struct PostViewModel: Equatable {
 	let id: Int16
-	let identifier: UUID?
-	let title: String?
-	let descr: String?
-	let image: String?
-	let published: Date?
-	let visible: Bool?
+	let identifier: UUID
+	let title: String
+	let descr: String
+	let image: String
+	let published: Date
+	let visible: Bool
 	
 	init(_ post: Post) {
-		id = post.id
-		identifier = post.identifier
-		title = post.title
-		descr = post.descr
-		image = post.image
-		published = post.published
-		visible = post.visible
+		
+		guard let id = post.id,
+			  let identifier = post.identifier,
+			  let title = post.title,
+			  let descr = post.descr,
+			  let image = post.image,
+			  let published = post.published,
+			  let visible = post.visible else {
+				fatalError("Invalid Post object")
+		}
+		
+		self.id = id
+		self.identifier = identifier
+		self.title = title
+		self.descr = descr
+		self.image = image
+		self.published = published
+		self.visible = visible
 	}
 }
 
