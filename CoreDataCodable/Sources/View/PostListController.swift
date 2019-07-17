@@ -37,13 +37,13 @@ class PostListController: UITableViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-
-		PostService.shared.fetchPosts { posts in
+		items = PostService.shared.fetchPosts { posts in
 			self.items = posts
 			DispatchQueue.main.sync {
 				self.tableView.reloadData()
 			}
 		}
+		tableView.reloadData()
 	}
 }
 
