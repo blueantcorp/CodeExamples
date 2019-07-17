@@ -41,7 +41,6 @@ struct PostViewModel: Equatable {
 	let visible: Bool
 	
 	init(_ post: Post) {
-		
 		guard let id = post.id,
 			  let identifier = post.identifier,
 			  let title = post.title,
@@ -49,7 +48,7 @@ struct PostViewModel: Equatable {
 			  let image = post.image,
 			  let published = post.published,
 			  let visible = post.visible else {
-				fatalError("Invalid Post object")
+			  fatalError("Invalid Post object")
 		}
 		
 		self.id = id
