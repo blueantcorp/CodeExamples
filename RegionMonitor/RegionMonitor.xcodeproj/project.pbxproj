@@ -13,6 +13,11 @@
 		6015F67222DFBAD80044974A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6015F67122DFBAD80044974A /* Assets.xcassets */; };
 		6015F67522DFBAD80044974A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6015F67322DFBAD80044974A /* LaunchScreen.storyboard */; };
 		6015F67D22DFBDD70044974A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6015F67C22DFBDD70044974A /* README.md */; };
+		601A77E122E031DE00B00AA4 /* GenericStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601A77E022E031DE00B00AA4 /* GenericStore.swift */; };
+		601A77E322E0332700B00AA4 /* RegionAnnotationsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601A77E222E0332700B00AA4 /* RegionAnnotationsStore.swift */; };
+		601A77E522E0339700B00AA4 /* RegionAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601A77E422E0339700B00AA4 /* RegionAnnotation.swift */; };
+		601A77E722E0404A00B00AA4 /* RegionNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601A77E622E0404A00B00AA4 /* RegionNotification.swift */; };
+		601A77E922E0408100B00AA4 /* RegionNotificationsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601A77E822E0408100B00AA4 /* RegionNotificationsStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		6015F67422DFBAD80044974A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6015F67622DFBAD80044974A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6015F67C22DFBDD70044974A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		601A77E022E031DE00B00AA4 /* GenericStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GenericStore.swift; path = ../../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/RegionMonitor/Sources/Store/GenericStore.swift; sourceTree = "<group>"; };
+		601A77E222E0332700B00AA4 /* RegionAnnotationsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegionAnnotationsStore.swift; path = ../../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/RegionMonitor/Sources/Store/RegionAnnotationsStore.swift; sourceTree = "<group>"; };
+		601A77E422E0339700B00AA4 /* RegionAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegionAnnotation.swift; path = ../../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/RegionMonitor/Sources/Model/RegionAnnotation.swift; sourceTree = "<group>"; };
+		601A77E622E0404A00B00AA4 /* RegionNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegionNotification.swift; path = ../../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/RegionMonitor/Sources/Model/RegionNotification.swift; sourceTree = "<group>"; };
+		601A77E822E0408100B00AA4 /* RegionNotificationsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegionNotificationsStore.swift; path = ../../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/RegionMonitor/Sources/Store/RegionNotificationsStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +69,11 @@
 			isa = PBXGroup;
 			children = (
 				6015F66A22DFBAD40044974A /* AppDelegate.swift */,
-				6015F66C22DFBAD40044974A /* ViewController.swift */,
+				601A77DA22E030B700B00AA4 /* View */,
+				601A77DC22E0311E00B00AA4 /* Model */,
+				601A77DD22E0312700B00AA4 /* Notifications */,
+				601A77DF22E0315A00B00AA4 /* Store */,
+				601A77D922E030AE00B00AA4 /* UItil */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -81,6 +95,63 @@
 				6015F67322DFBAD80044974A /* LaunchScreen.storyboard */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		601A77D922E030AE00B00AA4 /* UItil */ = {
+			isa = PBXGroup;
+			children = (
+				601A77DB22E030D500B00AA4 /* Extensions */,
+			);
+			path = UItil;
+			sourceTree = "<group>";
+		};
+		601A77DA22E030B700B00AA4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6015F66C22DFBAD40044974A /* ViewController.swift */,
+				601A77DE22E0314A00B00AA4 /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		601A77DB22E030D500B00AA4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		601A77DC22E0311E00B00AA4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				601A77E422E0339700B00AA4 /* RegionAnnotation.swift */,
+				601A77E622E0404A00B00AA4 /* RegionNotification.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		601A77DD22E0312700B00AA4 /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		601A77DE22E0314A00B00AA4 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		601A77DF22E0315A00B00AA4 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				601A77E022E031DE00B00AA4 /* GenericStore.swift */,
+				601A77E222E0332700B00AA4 /* RegionAnnotationsStore.swift */,
+				601A77E822E0408100B00AA4 /* RegionNotificationsStore.swift */,
+			);
+			path = Store;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +228,11 @@
 			files = (
 				6015F66D22DFBAD40044974A /* ViewController.swift in Sources */,
 				6015F66B22DFBAD40044974A /* AppDelegate.swift in Sources */,
+				601A77E322E0332700B00AA4 /* RegionAnnotationsStore.swift in Sources */,
+				601A77E122E031DE00B00AA4 /* GenericStore.swift in Sources */,
+				601A77E722E0404A00B00AA4 /* RegionNotification.swift in Sources */,
+				601A77E522E0339700B00AA4 /* RegionAnnotation.swift in Sources */,
+				601A77E922E0408100B00AA4 /* RegionNotificationsStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
