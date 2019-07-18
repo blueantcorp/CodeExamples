@@ -41,9 +41,9 @@ let RegionAnnotationSettingMapCell = 0
 let RegionAnnotationSettingCoordinateCell = 1
 let RegionAnnotationSettingRasiusCell = 2
 
-class RegionAnnotationSettingsDetailViewController: UITableViewController, MKMapViewDelegate, UITextFieldDelegate {
+class AnnotationDetailController: UITableViewController, MKMapViewDelegate, UITextFieldDelegate {
 	
-	var regionAnnotation: RegionAnnotation?
+	var regionAnnotation: Annotation?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -53,15 +53,15 @@ class RegionAnnotationSettingsDetailViewController: UITableViewController, MKMap
 	
 	// MARK: Private Methods
 	
-	func dequeueRegionAnnotationMapCell(_ indexPath: IndexPath) -> RegionAnnotationMapCell {
-		return tableView.dequeueReusableCell(withIdentifier: RegionAnnotationMapCellId, for: indexPath) as! RegionAnnotationMapCell
+	func dequeueRegionAnnotationMapCell(_ indexPath: IndexPath) -> AnnotationMapCell {
+		return tableView.dequeueReusableCell(withIdentifier: RegionAnnotationMapCellId, for: indexPath) as! AnnotationMapCell
 	}
 	
-	func dequeueRegionAnnotationPropertyCell(_ indexPath: IndexPath) -> RegionAnnotationPropertyCell {
-		return tableView.dequeueReusableCell(withIdentifier: RegionAnnotationPropertyCellId, for: indexPath) as! RegionAnnotationPropertyCell
+	func dequeueRegionAnnotationPropertyCell(_ indexPath: IndexPath) -> AnnotationPropertyCell {
+		return tableView.dequeueReusableCell(withIdentifier: RegionAnnotationPropertyCellId, for: indexPath) as! AnnotationPropertyCell
 	}
 	
-	func addRegionMonitoring(_ regionAnnotationMapCell: RegionAnnotationMapCell?) {
+	func addRegionMonitoring(_ regionAnnotationMapCell: AnnotationMapCell?) {
 		guard let regionAnnotation = regionAnnotation else {
 			return
 		}
@@ -119,7 +119,7 @@ class RegionAnnotationSettingsDetailViewController: UITableViewController, MKMap
 	
 	func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
 		if overlay is MKCircle {
-			return RegionAnnotationView.circleRenderer(overlay)
+			return AnnotationView.circleRenderer(overlay)
 		}
 		return MKOverlayRenderer()
 	}

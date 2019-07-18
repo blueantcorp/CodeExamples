@@ -33,19 +33,19 @@ import UIKit
 
 let RegionAnnotationsTableViewCellId = "RegionAnnotationsTableViewCell"
 
-class RegionAnnotationsTableViewController: UITableViewController {
+class AnnotationListController: UITableViewController {
 	
-	var regionAnnotations: [RegionAnnotation]?
+	var regionAnnotations: [Annotation]?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		title = NSLocalizedString("Monitored Regions", comment: "Monitored Regions")
 		
-		regionAnnotations = RegionAnnotationsStore.sharedInstance.storedItems
+		regionAnnotations = AnnotationsStore.sharedInstance.storedItems
 		
 		NotificationCenter.default.addObserver(self,
-											   selector: #selector(RegionAnnotationsTableViewController.regionAnnotationItemsDidChange(_:)),
+											   selector: #selector(AnnotationListController.regionAnnotationItemsDidChange(_:)),
 											   name: NSNotification.Name(rawValue: RegionAnnotationItemsDidChangeNotification),
 											   object: nil)
 	}
@@ -85,7 +85,7 @@ class RegionAnnotationsTableViewController: UITableViewController {
 			let cell = sender as? UITableViewCell
 			let indexPath = tableView.indexPath(for: cell!)
 			let regionAnnotation = regionAnnotations?[(indexPath! as NSIndexPath).row]
-			let regionAnnotationSettingsDetailVC = segue.destination as? RegionAnnotationSettingsDetailViewController
+			let regionAnnotationSettingsDetailVC = segue.destination as? AnnotationDetailController
 			regionAnnotationSettingsDetailVC?.regionAnnotation = regionAnnotation
 		}
 	}
@@ -99,7 +99,7 @@ class RegionAnnotationsTableViewController: UITableViewController {
 	// MARK: NSNotificationCenter Events
 	
 	@objc func regionAnnotationItemsDidChange(_ notification: Notification) {
-		regionAnnotations = RegionAnnotationsStore.sharedInstance.storedItems
+		regionAnnotations = AnnotationsStore.sharedInstance.storedItems
 		DispatchQueue.main.async {
 			self.tableView.reloadData()
 		}

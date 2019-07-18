@@ -20,7 +20,7 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: 5E1D8B4B-2FE5-485B-AD38-8F8E97408715
+//	ID: FD7E5109-E91E-4283-9C1F-624F2874113A
 //
 //	Pkg: RegionMonitor
 //
@@ -31,7 +31,7 @@
 
 import UIKit
 
-class RegionNotificationCell: UITableViewCell {
+class AnnotationPropertyCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

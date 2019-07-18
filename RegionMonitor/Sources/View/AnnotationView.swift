@@ -35,7 +35,7 @@ import MapKit
 let RegionAnnotationViewRemoveButtonTag = 1001
 let RegionAnnotationViewDetailsButtonTag = 1002
 
-class RegionAnnotationView: MKPinAnnotationView {
+class AnnotationView: MKPinAnnotationView {
 	
 	required init?(coder aDecoder: NSCoder) {
 		super.init(annotation: nil, reuseIdentifier: nil)
@@ -76,7 +76,7 @@ class RegionAnnotationView: MKPinAnnotationView {
 	// MARK: Public Methods
 	
 	func addRadiusOverlay(_ mapView: MKMapView?) {
-		let regionAnnotation = annotation as! RegionAnnotation
+		let regionAnnotation = annotation as! Annotation
 		mapView?.addOverlay(MKCircle(center: regionAnnotation.coordinate, radius: regionAnnotation.radius))
 	}
 	
@@ -85,7 +85,7 @@ class RegionAnnotationView: MKPinAnnotationView {
 			for overlay in overlays {
 				if let circleOverlay = overlay as? MKCircle {
 					let coord = circleOverlay.coordinate
-					let regionAnnotation = annotation as! RegionAnnotation
+					let regionAnnotation = annotation as! Annotation
 					if coord.latitude == regionAnnotation.coordinate.latitude &&
 						coord.longitude == regionAnnotation.coordinate.longitude &&
 						circleOverlay.radius == regionAnnotation.radius {

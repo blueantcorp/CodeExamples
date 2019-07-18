@@ -46,7 +46,7 @@ enum RegionAnnotationEvent: Int {
 	case exit
 }
 
-class RegionAnnotation: NSObject, MKAnnotation, NSCoding {
+class Annotation: NSObject, MKAnnotation, NSCoding {
 	
 	let coordinate: CLLocationCoordinate2D
 	let radius: CLLocationDistance

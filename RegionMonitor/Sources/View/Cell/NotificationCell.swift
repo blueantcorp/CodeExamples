@@ -20,7 +20,7 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: F445E342-DDE5-48D2-8FAC-8EBB1C062CDD
+//	ID: 5E1D8B4B-2FE5-485B-AD38-8F8E97408715
 //
 //	Pkg: RegionMonitor
 //
@@ -29,24 +29,19 @@
 //	MacOS: 10.15
 //
 
-import Foundation
+import UIKit
 
-let RegionAnnotationItemsKey = "RegionAnnotationItems"
-let RegionAnnotationItemsDidChangeNotification = "RegionAnnotationItemsDidChangeNotification"
+class NotificationCell: UITableViewCell {
 
-class RegionAnnotationsStore {
-	
-	// MARK: Singleton
-	
-	static let sharedInstance = GenericStore<RegionAnnotation>(storeItemsKey: RegionAnnotationItemsKey, storeItemsDidChangeNotification: RegionAnnotationItemsDidChangeNotification)
-	
-	class func annotationForRegionIdentifier(_ identifier: String) -> RegionAnnotation? {
-		for annotation in RegionAnnotationsStore.sharedInstance.storedItems {
-			if annotation.identifier == identifier {
-				return annotation
-			}
-		}
-		return nil
-	}
-	
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+
+        // Configure the view for the selected state
+    }
+
 }

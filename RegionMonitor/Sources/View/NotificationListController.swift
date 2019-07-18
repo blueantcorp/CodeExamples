@@ -33,20 +33,20 @@ import UIKit
 
 let RegionNotificationsTableViewCellId = "RegionNotificationsTableViewCell"
 
-class RegionNotificationsTableViewController: UITableViewController {
+class NotificationListController: UITableViewController {
 	
-	var regionNotifications: [RegionNotification]?
+	var regionNotifications: [Notification]?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		title = NSLocalizedString("Region Notifications", comment: "Region Notifications")
 		
-		regionNotifications = RegionNotificationsStore.sharedInstance.storedItems
+		regionNotifications = NotificationsStore.sharedInstance.storedItems
 		regionNotifications?.sort(by: { $0.timestamp.timeIntervalSince1970 > $1.timestamp.timeIntervalSince1970 })
 		
 		NotificationCenter.default.addObserver(self,
-											   selector: #selector(RegionNotificationsTableViewController.regionNotificationsItemsDidChange(_:)),
+											   selector: #selector(NotificationListController.regionNotificationsItemsDidChange(_:)),
 											   name: NSNotification.Name(rawValue: RegionNotificationItemsDidChangeNotification),
 											   object: nil)
 	}
@@ -65,7 +65,7 @@ class RegionNotificationsTableViewController: UITableViewController {
 	}
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: RegionNotificationsTableViewCellId, for: indexPath) as! RegionNotificationCell
+		let cell = tableView.dequeueReusableCell(withIdentifier: RegionNotificationsTableViewCellId, for: indexPath) as! NotificationCell
 		let row = (indexPath as NSIndexPath).row
 		let regionNotification = regionNotifications?[row]
 //		cell.timestamp.text = regionNotification?.displayTimestamp()
@@ -88,7 +88,7 @@ class RegionNotificationsTableViewController: UITableViewController {
 	// MARK: NSNotificationCenter Events
 	
 	@objc func regionNotificationsItemsDidChange(_ notification: Notification) {
-		regionNotifications = RegionNotificationsStore.sharedInstance.storedItems
+		regionNotifications = NotificationsStore.sharedInstance.storedItems
 		regionNotifications?.sort(by: { $0.timestamp.timeIntervalSince1970 > $1.timestamp.timeIntervalSince1970 })
 		DispatchQueue.main.async {
 			self.tableView.reloadData()
