@@ -36,7 +36,6 @@ let RegionAnnotationViewRemoveButtonTag = 1001
 let RegionAnnotationViewDetailsButtonTag = 1002
 
 class AnnotationView: MKPinAnnotationView {
-	
 	required init?(coder aDecoder: NSCoder) {
 		super.init(annotation: nil, reuseIdentifier: nil)
 		setupPin()
@@ -46,35 +45,10 @@ class AnnotationView: MKPinAnnotationView {
 		super.init(annotation: annotation, reuseIdentifier: reuseIdentifier)
 		setupPin()
 	}
-	
-	// MARK: Static Methods
-	
-	class func circleRenderer(_ overlay: MKOverlay) -> MKCircleRenderer {
-		let circleRenderer = MKCircleRenderer(overlay: overlay)
-		circleRenderer.lineWidth = 1.0
-		circleRenderer.strokeColor = UIColor.blue
-		circleRenderer.fillColor = UIColor.blue.withAlphaComponent(0.4)
-		return circleRenderer
-	}
-	
-	// MARK: Private Methods
-	
-	fileprivate func setupPin() {
-		pinTintColor = MKPinAnnotationView.redPinColor()
-		animatesDrop = true
-		canShowCallout = true
-		let removeButton : UIButton = UIButton(type: UIButton.ButtonType.custom)
-		removeButton.tag = RegionAnnotationViewRemoveButtonTag
-		removeButton.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
-		removeButton.setImage(UIImage(named: "close-icon"), for: UIControl.State())
-		leftCalloutAccessoryView =  removeButton
-		let detailButton : UIButton = UIButton(type: UIButton.ButtonType.detailDisclosure)
-		detailButton.tag = RegionAnnotationViewDetailsButtonTag
-		rightCalloutAccessoryView = detailButton
-	}
-	
-	// MARK: Public Methods
-	
+}
+
+// MARK: - Actions
+extension AnnotationView {
 	func addRadiusOverlay(_ mapView: MKMapView?) {
 		let regionAnnotation = annotation as! Annotation
 		mapView?.addOverlay(MKCircle(center: regionAnnotation.coordinate, radius: regionAnnotation.radius))
@@ -95,5 +69,30 @@ class AnnotationView: MKPinAnnotationView {
 				}
 			}
 		}
-	}	
+	}
+}
+
+// MARK: - UI
+extension AnnotationView {
+	class func circleRenderer(_ overlay: MKOverlay) -> MKCircleRenderer {
+		let circleRenderer = MKCircleRenderer(overlay: overlay)
+		circleRenderer.lineWidth = 1.0
+		circleRenderer.strokeColor = UIColor.blue
+		circleRenderer.fillColor = UIColor.blue.withAlphaComponent(0.4)
+		return circleRenderer
+	}
+	
+	private func setupPin() {
+		pinTintColor = MKPinAnnotationView.redPinColor()
+		animatesDrop = true
+		canShowCallout = true
+		let removeButton : UIButton = UIButton(type: UIButton.ButtonType.custom)
+		removeButton.tag = RegionAnnotationViewRemoveButtonTag
+		removeButton.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
+		removeButton.setImage(UIImage(named: "close-icon"), for: UIControl.State())
+		leftCalloutAccessoryView =  removeButton
+		let detailButton : UIButton = UIButton(type: UIButton.ButtonType.detailDisclosure)
+		detailButton.tag = RegionAnnotationViewDetailsButtonTag
+		rightCalloutAccessoryView = detailButton
+	}
 }

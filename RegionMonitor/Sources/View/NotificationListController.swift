@@ -66,8 +66,9 @@ class NotificationListController: UITableViewController {
 	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: RegionNotificationsTableViewCellId, for: indexPath) as! NotificationCell
-		let row = (indexPath as NSIndexPath).row
-		let regionNotification = regionNotifications?[row]
+		#warning("TODO")
+//		let row = (indexPath as NSIndexPath).row
+//		let regionNotification = regionNotifications?[row]
 //		cell.timestamp.text = regionNotification?.displayTimestamp()
 //		cell.status.text = regionNotification?.displayAppStatus()
 //		cell.message.text = regionNotification?.message

@@ -87,8 +87,11 @@ private extension GenericStore {
 	private func saveStoredItems() {
 		let items = NSMutableArray()
 		for storedItem in storedItems {
-			let item = NSKeyedArchiver.archivedData(withRootObject: storedItem)
-			items.add(item)
+			
+			#warning("Refactor")
+			if let item = try? NSKeyedArchiver.archivedData(withRootObject: storedItem, requiringSecureCoding: false) {
+				items.add(item)
+			}
 		}
 		NotificationCenter.default.post(name: Notification.Name(rawValue: storeItemsDidChangeNotification), object: nil)
 		UserDefaults.standard.set(items, forKey: storeItemsKey)

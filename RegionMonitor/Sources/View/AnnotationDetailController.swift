@@ -62,12 +62,15 @@ class AnnotationDetailController: UITableViewController, MKMapViewDelegate, UITe
 	}
 	
 	func addRegionMonitoring(_ regionAnnotationMapCell: AnnotationMapCell?) {
-		guard let regionAnnotation = regionAnnotation else {
-			return
-		}
+		#warning("TODO")
+//		guard let regionAnnotation = regionAnnotation else {
+//			return
+//		}
 		
-		let distance = regionAnnotation.radius * 2
-		let region = MKCoordinateRegion.init(center: regionAnnotation.coordinate, latitudinalMeters: distance, longitudinalMeters: distance)
+//		let distance = regionAnnotation.radius * 2
+//		let region = MKCoordinateRegion.init(center: regionAnnotation.coordinate,
+//											 latitudinalMeters: distance,
+//											 longitudinalMeters: distance)
 //		regionAnnotationMapCell?.mapView.delegate = self
 //		regionAnnotationMapCell?.mapView.setRegion(region, animated: true)
 //		regionAnnotationMapCell?.mapView.addAnnotation(regionAnnotation)
