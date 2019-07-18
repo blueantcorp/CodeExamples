@@ -18,6 +18,14 @@
 		601A77E522E0339700B00AA4 /* RegionAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601A77E422E0339700B00AA4 /* RegionAnnotation.swift */; };
 		601A77E722E0404A00B00AA4 /* RegionNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601A77E622E0404A00B00AA4 /* RegionNotification.swift */; };
 		601A77E922E0408100B00AA4 /* RegionNotificationsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601A77E822E0408100B00AA4 /* RegionNotificationsStore.swift */; };
+		601A77EB22E043CF00B00AA4 /* RegionAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601A77EA22E043CF00B00AA4 /* RegionAnnotationView.swift */; };
+		601A77ED22E0446000B00AA4 /* RegionAnnotationPropertyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601A77EC22E0446000B00AA4 /* RegionAnnotationPropertyCell.swift */; };
+		601A77EF22E0447B00B00AA4 /* RegionAnnotationMapCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601A77EE22E0447B00B00AA4 /* RegionAnnotationMapCell.swift */; };
+		601A77F122E0449300B00AA4 /* RegionNotificationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601A77F022E0449300B00AA4 /* RegionNotificationCell.swift */; };
+		601A77F322E0450600B00AA4 /* RegionNotificationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601A77F222E0450600B00AA4 /* RegionNotificationsTableViewController.swift */; };
+		601A77F522E0456C00B00AA4 /* RegionAnnotationSettingsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601A77F422E0456C00B00AA4 /* RegionAnnotationSettingsDetailViewController.swift */; };
+		601A77F722E045B900B00AA4 /* RegionAnnotationsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601A77F622E045B900B00AA4 /* RegionAnnotationsTableViewController.swift */; };
+		601A77F922E045E200B00AA4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601A77F822E045E200B00AA4 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +42,14 @@
 		601A77E422E0339700B00AA4 /* RegionAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegionAnnotation.swift; path = ../../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/RegionMonitor/Sources/Model/RegionAnnotation.swift; sourceTree = "<group>"; };
 		601A77E622E0404A00B00AA4 /* RegionNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegionNotification.swift; path = ../../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/RegionMonitor/Sources/Model/RegionNotification.swift; sourceTree = "<group>"; };
 		601A77E822E0408100B00AA4 /* RegionNotificationsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegionNotificationsStore.swift; path = ../../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/RegionMonitor/Sources/Store/RegionNotificationsStore.swift; sourceTree = "<group>"; };
+		601A77EA22E043CF00B00AA4 /* RegionAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegionAnnotationView.swift; path = ../../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/RegionMonitor/Sources/View/RegionAnnotationView.swift; sourceTree = "<group>"; };
+		601A77EC22E0446000B00AA4 /* RegionAnnotationPropertyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegionAnnotationPropertyCell.swift; path = ../../../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/RegionMonitor/Sources/View/Cell/RegionAnnotationPropertyCell.swift; sourceTree = "<group>"; };
+		601A77EE22E0447B00B00AA4 /* RegionAnnotationMapCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegionAnnotationMapCell.swift; path = ../../../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/RegionMonitor/Sources/View/Cell/RegionAnnotationMapCell.swift; sourceTree = "<group>"; };
+		601A77F022E0449300B00AA4 /* RegionNotificationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegionNotificationCell.swift; path = ../../../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/RegionMonitor/Sources/View/Cell/RegionNotificationCell.swift; sourceTree = "<group>"; };
+		601A77F222E0450600B00AA4 /* RegionNotificationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegionNotificationsTableViewController.swift; path = ../../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/RegionMonitor/Sources/View/RegionNotificationsTableViewController.swift; sourceTree = "<group>"; };
+		601A77F422E0456C00B00AA4 /* RegionAnnotationSettingsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegionAnnotationSettingsDetailViewController.swift; path = ../../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/RegionMonitor/Sources/View/RegionAnnotationSettingsDetailViewController.swift; sourceTree = "<group>"; };
+		601A77F622E045B900B00AA4 /* RegionAnnotationsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegionAnnotationsTableViewController.swift; path = ../../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/RegionMonitor/Sources/View/RegionAnnotationsTableViewController.swift; sourceTree = "<group>"; };
+		601A77F822E045E200B00AA4 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ../../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/RegionMonitor/Sources/View/MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +125,11 @@
 			isa = PBXGroup;
 			children = (
 				6015F66C22DFBAD40044974A /* ViewController.swift */,
+				601A77F822E045E200B00AA4 /* MapViewController.swift */,
+				601A77F222E0450600B00AA4 /* RegionNotificationsTableViewController.swift */,
+				601A77F622E045B900B00AA4 /* RegionAnnotationsTableViewController.swift */,
+				601A77F422E0456C00B00AA4 /* RegionAnnotationSettingsDetailViewController.swift */,
+				601A77EA22E043CF00B00AA4 /* RegionAnnotationView.swift */,
 				601A77DE22E0314A00B00AA4 /* Cell */,
 			);
 			path = View;
@@ -140,6 +161,9 @@
 		601A77DE22E0314A00B00AA4 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				601A77EC22E0446000B00AA4 /* RegionAnnotationPropertyCell.swift */,
+				601A77EE22E0447B00B00AA4 /* RegionAnnotationMapCell.swift */,
+				601A77F022E0449300B00AA4 /* RegionNotificationCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -229,10 +253,18 @@
 				6015F66D22DFBAD40044974A /* ViewController.swift in Sources */,
 				6015F66B22DFBAD40044974A /* AppDelegate.swift in Sources */,
 				601A77E322E0332700B00AA4 /* RegionAnnotationsStore.swift in Sources */,
+				601A77ED22E0446000B00AA4 /* RegionAnnotationPropertyCell.swift in Sources */,
+				601A77F522E0456C00B00AA4 /* RegionAnnotationSettingsDetailViewController.swift in Sources */,
 				601A77E122E031DE00B00AA4 /* GenericStore.swift in Sources */,
+				601A77F722E045B900B00AA4 /* RegionAnnotationsTableViewController.swift in Sources */,
+				601A77EF22E0447B00B00AA4 /* RegionAnnotationMapCell.swift in Sources */,
 				601A77E722E0404A00B00AA4 /* RegionNotification.swift in Sources */,
 				601A77E522E0339700B00AA4 /* RegionAnnotation.swift in Sources */,
+				601A77F322E0450600B00AA4 /* RegionNotificationsTableViewController.swift in Sources */,
 				601A77E922E0408100B00AA4 /* RegionNotificationsStore.swift in Sources */,
+				601A77EB22E043CF00B00AA4 /* RegionAnnotationView.swift in Sources */,
+				601A77F922E045E200B00AA4 /* MapViewController.swift in Sources */,
+				601A77F122E0449300B00AA4 /* RegionNotificationCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
