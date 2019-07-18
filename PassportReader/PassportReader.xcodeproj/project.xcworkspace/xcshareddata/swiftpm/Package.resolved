@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Passport",
+        "repositoryURL": "git@github.com:blueantcorp/Passport.git",
+        "state": {
+          "branch": null,
+          "revision": "ff2a6a4937c0cb6c79733a8b893a2bf315f2184a",
+          "version": "1.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

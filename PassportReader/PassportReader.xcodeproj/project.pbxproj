@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		6099E23D22E0C952008840BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6099E23C22E0C952008840BC /* Assets.xcassets */; };
 		6099E24022E0C952008840BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6099E23E22E0C952008840BC /* LaunchScreen.storyboard */; };
 		6099E24A22E0CBDE008840BC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6099E24922E0CBDE008840BC /* README.md */; };
+		60A9A69E22E0E1F7009A211C /* Passport in Frameworks */ = {isa = PBXBuildFile; productRef = 60A9A69D22E0E1F7009A211C /* Passport */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,7 +27,7 @@
 		6099E23F22E0C952008840BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6099E24122E0C952008840BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6099E24922E0CBDE008840BC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		60A9A69B22E0DAFF009A211C /* Passport */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Passport; path = ../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/Passport; sourceTree = "<group>"; };
+		60A9A69F22E0E683009A211C /* Passport */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Passport; path = ../../Passport; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60A9A69E22E0E1F7009A211C /* Passport in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,8 +45,8 @@
 		6099E22722E0C94B008840BC = {
 			isa = PBXGroup;
 			children = (
-				60A9A69B22E0DAFF009A211C /* Passport */,
 				6099E24922E0CBDE008840BC /* README.md */,
+				60A9A69F22E0E683009A211C /* Passport */,
 				6099E23222E0C94B008840BC /* Sources */,
 				6099E24722E0C9BC008840BC /* Resources */,
 				6099E23122E0C94B008840BC /* Products */,
@@ -104,6 +106,9 @@
 			dependencies = (
 			);
 			name = PassportReader;
+			packageProductDependencies = (
+				60A9A69D22E0E1F7009A211C /* Passport */,
+			);
 			productName = PassportReader;
 			productReference = 6099E23022E0C94B008840BC /* PassportReader.app */;
 			productType = "com.apple.product-type.application";
@@ -132,6 +137,9 @@
 				Base,
 			);
 			mainGroup = 6099E22722E0C94B008840BC;
+			packageReferences = (
+				60A9A69C22E0E1F7009A211C /* XCRemoteSwiftPackageReference "Passport" */,
+			);
 			productRefGroup = 6099E23122E0C94B008840BC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -360,6 +368,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		60A9A69C22E0E1F7009A211C /* XCRemoteSwiftPackageReference "Passport" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:blueantcorp/Passport.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		60A9A69D22E0E1F7009A211C /* Passport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 60A9A69C22E0E1F7009A211C /* XCRemoteSwiftPackageReference "Passport" */;
+			productName = Passport;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 6099E22822E0C94B008840BC /* Project object */;
 }
