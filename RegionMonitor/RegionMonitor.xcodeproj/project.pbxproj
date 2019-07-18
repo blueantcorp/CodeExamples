@@ -25,7 +25,6 @@
 		601A77F322E0450600B00AA4 /* NotificationListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601A77F222E0450600B00AA4 /* NotificationListController.swift */; };
 		601A77F522E0456C00B00AA4 /* AnnotationDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601A77F422E0456C00B00AA4 /* AnnotationDetailController.swift */; };
 		601A77F722E045B900B00AA4 /* AnnotationListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601A77F622E045B900B00AA4 /* AnnotationListController.swift */; };
-		601A77F922E045E200B00AA4 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601A77F822E045E200B00AA4 /* MapViewController.swift */; };
 		60977C0522E056A900EE1857 /* UIAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60977C0422E056A900EE1857 /* UIAlertController.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,7 +49,6 @@
 		601A77F222E0450600B00AA4 /* NotificationListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NotificationListController.swift; path = ../../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/RegionMonitor/Sources/View/NotificationListController.swift; sourceTree = "<group>"; };
 		601A77F422E0456C00B00AA4 /* AnnotationDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnnotationDetailController.swift; path = ../../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/RegionMonitor/Sources/View/AnnotationDetailController.swift; sourceTree = "<group>"; };
 		601A77F622E045B900B00AA4 /* AnnotationListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AnnotationListController.swift; path = ../../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/RegionMonitor/Sources/View/AnnotationListController.swift; sourceTree = "<group>"; };
-		601A77F822E045E200B00AA4 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MapViewController.swift; path = ../../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/RegionMonitor/Sources/View/MapViewController.swift; sourceTree = "<group>"; };
 		60977C0422E056A900EE1857 /* UIAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UIAlertController.swift; path = ../../../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/RegionMonitor/Sources/UItil/Extensions/UIAlertController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,7 +124,6 @@
 			isa = PBXGroup;
 			children = (
 				6015F66C22DFBAD40044974A /* ViewController.swift */,
-				601A77F822E045E200B00AA4 /* MapViewController.swift */,
 				601A77F222E0450600B00AA4 /* NotificationListController.swift */,
 				601A77F622E045B900B00AA4 /* AnnotationListController.swift */,
 				601A77F422E0456C00B00AA4 /* AnnotationDetailController.swift */,
@@ -259,7 +256,6 @@
 				601A77E922E0408100B00AA4 /* NotificationStore.swift in Sources */,
 				60977C0522E056A900EE1857 /* UIAlertController.swift in Sources */,
 				601A77EB22E043CF00B00AA4 /* AnnotationView.swift in Sources */,
-				601A77F922E045E200B00AA4 /* MapViewController.swift in Sources */,
 				601A77F122E0449300B00AA4 /* NotificationCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
