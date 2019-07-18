@@ -20,7 +20,7 @@
 //	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //	SOFTWARE.
 //
-//	ID: D859D25F-4612-42D2-8A55-47D6AC7CA614
+//	ID: 759B3F59-FBAE-4768-BBDD-0036752ED4BE
 //
 //	Pkg: PassportReader
 //
@@ -29,9 +29,35 @@
 //	MacOS: 10.15
 //
 
-import UIKit
+import Foundation
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+/// Some Utility methods for string -  access characters by index
+extension String {
+	subscript(_ i: Int) -> String {
+		let idx1 = index(startIndex, offsetBy: i)
+		let idx2 = index(idx1, offsetBy: 1)
+		return String(self[idx1..<idx2])
+	}
+	
+	subscript (bounds: CountableRange<Int>) -> String {
+		let start = index(startIndex, offsetBy: bounds.lowerBound)
+		let end = index(startIndex, offsetBy: bounds.upperBound)
+		return String(self[start..<end])
+	}
+	
+	subscript (bounds: CountableClosedRange<Int>) -> String {
+		let start = index(startIndex, offsetBy: bounds.lowerBound)
+		let end = index(startIndex, offsetBy: bounds.upperBound)
+		return String(self[start...end])
+	}
+	
+	subscript (bounds: CountablePartialRangeFrom<Int>) -> String {
+		let start = index(startIndex, offsetBy: bounds.lowerBound)
+		return String(self[start...])
+	}
+	
+	func strip() -> String {
+		let trimmed = self.trimmingCharacters(in: .whitespacesAndNewlines)
+		return trimmed
+	}
 }
-
