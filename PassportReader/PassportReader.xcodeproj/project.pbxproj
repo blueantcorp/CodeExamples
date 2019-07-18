@@ -39,6 +39,7 @@
 		60C37B6022E1286700590360 /* PassportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PassportView.swift; path = ../../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/PassportReader/Sources/View/PassportView.swift; sourceTree = "<group>"; };
 		60C37B6222E1291300590360 /* PassiveAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PassiveAuthentication.swift; path = ../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/PassportReader/Sources/PassiveAuthentication.swift; sourceTree = "<group>"; };
 		60C37B6422E129F500590360 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = String.swift; path = ../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/PassportReader/Sources/String.swift; sourceTree = "<group>"; };
+		60C37B6622E12E7000590360 /* PassportReader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PassportReader.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +57,7 @@
 		6099E22722E0C94B008840BC = {
 			isa = PBXGroup;
 			children = (
+				60C37B6622E12E7000590360 /* PassportReader.entitlements */,
 				6099E24922E0CBDE008840BC /* README.md */,
 				60A9A69F22E0E683009A211C /* Passport */,
 				6099E23222E0C94B008840BC /* Sources */,
@@ -352,6 +354,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PassportReader.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7R2H7J9PW2;
 				INFOPLIST_FILE = Resources/Info.plist;
@@ -370,6 +373,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = PassportReader.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7R2H7J9PW2;
 				INFOPLIST_FILE = Resources/Info.plist;
