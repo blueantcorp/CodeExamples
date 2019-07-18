@@ -53,8 +53,9 @@ class AnnotationDetailController: UITableViewController, MKMapViewDelegate, UITe
 
 // MARK: - Region Monitoring
 extension AnnotationDetailController {
+	
+	#warning("Refactor")
 	func addRegionMonitoring(_ regionAnnotationMapCell: AnnotationMapCell?) {
-		#warning("TODO")
 		//		guard let regionAnnotation = regionAnnotation else {
 		//			return
 		//		}
@@ -87,10 +88,13 @@ extension AnnotationDetailController {
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell: UITableViewCell
 		switch (indexPath as NSIndexPath).row {
-		case RegionAnnotationSettingMapCell:
-			let regionAnnotationMapCell = dequeueRegionAnnotationMapCell(indexPath)
+		
+		#warning("Refactor")
+		case RegionAnnotationSettingMapCell: let regionAnnotationMapCell = dequeueRegionAnnotationMapCell(indexPath)
 			addRegionMonitoring(regionAnnotationMapCell)
 			cell = regionAnnotationMapCell
+		
+		#warning("Refactor")
 		case RegionAnnotationSettingCoordinateCell:
 			let regionAnnotationPropertyCell = dequeueRegionAnnotationPropertyCell(indexPath)
 			//			regionAnnotationPropertyCell.propertyLabel.text = "Coordinate"
@@ -98,12 +102,15 @@ extension AnnotationDetailController {
 			//			regionAnnotationPropertyCell.valueTextField.text = String(format: "%f, %f", coordinate!.latitude, coordinate!.longitude)
 			//			regionAnnotationPropertyCell.valueTextField.delegate = self
 			cell = regionAnnotationPropertyCell
+		
+		#warning("Refactor")
 		case RegionAnnotationSettingRasiusCell:
 			let regionAnnotationPropertyCell = dequeueRegionAnnotationPropertyCell(indexPath)
 			//			regionAnnotationPropertyCell.propertyLabel.text = "Radius"
 			//			regionAnnotationPropertyCell.valueTextField.text = String("\(regionAnnotation!.radius)")
 			//			regionAnnotationPropertyCell.valueTextField.delegate = self
 			cell = regionAnnotationPropertyCell
+
 		default:
 			cell = UITableViewCell()
 			print("Error: invalid indexPath for cellForRowAtIndexPath: \(indexPath)")
