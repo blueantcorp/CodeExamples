@@ -49,8 +49,40 @@ class AnnotationListController: UITableViewController {
 											   name: NSNotification.Name(rawValue: RegionAnnotationItemsDidChangeNotification),
 											   object: nil)
 	}
-	
-	// MARK: UITableViewDataSource
+}
+
+// MARK: - Segues
+extension AnnotationListController {
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if segue.identifier == RegionAnnotationSettingsDetailSegue {
+			let cell = sender as? UITableViewCell
+			let indexPath = tableView.indexPath(for: cell!)
+			let regionAnnotation = regionAnnotations?[(indexPath! as NSIndexPath).row]
+			let regionAnnotationSettingsDetailVC = segue.destination as? AnnotationDetailController
+			regionAnnotationSettingsDetailVC?.regionAnnotation = regionAnnotation
+		}
+	}
+}
+
+// MARK: - NSNotificationCenter Events
+extension AnnotationListController {
+	@objc func regionAnnotationItemsDidChange(_ notification: Notification) {
+		regionAnnotations = AnnotationStore.shared.storedItems
+		DispatchQueue.main.async {
+			self.tableView.reloadData()
+		}
+	}
+}
+
+// MARK: - Actions
+extension AnnotationListController {
+	@IBAction func editButtonTapped(_ sender: AnyObject) {
+		tableView.isEditing = !tableView.isEditing
+	}
+}
+
+// MARK: - UITableViewDataSource
+extension AnnotationListController {
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		if regionAnnotations != nil {
 			return regionAnnotations!.count
@@ -76,29 +108,4 @@ class AnnotationListController: UITableViewController {
 			return
 		}
 	}
-	
-	// MARK: Segues
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.identifier == RegionAnnotationSettingsDetailSegue {
-			let cell = sender as? UITableViewCell
-			let indexPath = tableView.indexPath(for: cell!)
-			let regionAnnotation = regionAnnotations?[(indexPath! as NSIndexPath).row]
-			let regionAnnotationSettingsDetailVC = segue.destination as? AnnotationDetailController
-			regionAnnotationSettingsDetailVC?.regionAnnotation = regionAnnotation
-		}
-	}
-	
-	// MARK: Actions
-	@IBAction func editButtonTapped(_ sender: AnyObject) {
-		tableView.isEditing = !tableView.isEditing
-	}
-	
-	// MARK: NSNotificationCenter Events
-	@objc func regionAnnotationItemsDidChange(_ notification: Notification) {
-		regionAnnotations = AnnotationStore.shared.storedItems
-		DispatchQueue.main.async {
-			self.tableView.reloadData()
-		}
-	}
-	
 }
