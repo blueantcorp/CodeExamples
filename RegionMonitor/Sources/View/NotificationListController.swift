@@ -50,9 +50,28 @@ class NotificationListController: UITableViewController {
 											   name: NSNotification.Name(rawValue: RegionNotificationItemsDidChangeNotification),
 											   object: nil)
 	}
-	
-	// MARK: UITableViewDataSource
-	
+}
+
+// MARK: - NSNotificationCenter Events
+extension NotificationListController {
+	@objc func regionNotificationsItemsDidChange(_ notification: Notification) {
+		regionNotifications = NotificationStore.shared.storedItems
+		regionNotifications?.sort(by: { $0.timestamp.timeIntervalSince1970 > $1.timestamp.timeIntervalSince1970 })
+		DispatchQueue.main.async {
+			self.tableView.reloadData()
+		}
+	}
+}
+
+// MARK: - UITableViewDelegate
+extension NotificationListController {
+	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		return 66.0
+	}
+}
+
+// MARK: - UITableViewDataSource
+extension NotificationListController {
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		if regionNotifications != nil {
 			return regionNotifications!.count
@@ -60,19 +79,15 @@ class NotificationListController: UITableViewController {
 		return 0
 	}
 	
-	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-		return 66.0
-	}
-	
 	override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: RegionNotificationsTableViewCellId, for: indexPath) as! NotificationCell
 		#warning("TODO")
-//		let row = (indexPath as NSIndexPath).row
-//		let regionNotification = regionNotifications?[row]
-//		cell.timestamp.text = regionNotification?.displayTimestamp()
-//		cell.status.text = regionNotification?.displayAppStatus()
-//		cell.message.text = regionNotification?.message
-//		cell.event.text = regionNotification?.displayEvent()
+		//		let row = (indexPath as NSIndexPath).row
+		//		let regionNotification = regionNotifications?[row]
+		//		cell.timestamp.text = regionNotification?.displayTimestamp()
+		//		cell.status.text = regionNotification?.displayAppStatus()
+		//		cell.message.text = regionNotification?.message
+		//		cell.event.text = regionNotification?.displayEvent()
 		return cell
 	}
 	
@@ -85,15 +100,4 @@ class NotificationListController: UITableViewController {
 			return
 		}
 	}
-	
-	// MARK: NSNotificationCenter Events
-	
-	@objc func regionNotificationsItemsDidChange(_ notification: Notification) {
-		regionNotifications = NotificationStore.shared.storedItems
-		regionNotifications?.sort(by: { $0.timestamp.timeIntervalSince1970 > $1.timestamp.timeIntervalSince1970 })
-		DispatchQueue.main.async {
-			self.tableView.reloadData()
-		}
-	}
-	
 }
