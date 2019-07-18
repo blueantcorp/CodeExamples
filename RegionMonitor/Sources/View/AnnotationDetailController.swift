@@ -47,38 +47,31 @@ class AnnotationDetailController: UITableViewController, MKMapViewDelegate, UITe
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
 		title = regionAnnotation?.title
 	}
-	
-	// MARK: Private Methods
-	
-	func dequeueRegionAnnotationMapCell(_ indexPath: IndexPath) -> AnnotationMapCell {
-		return tableView.dequeueReusableCell(withIdentifier: RegionAnnotationMapCellId, for: indexPath) as! AnnotationMapCell
-	}
-	
-	func dequeueRegionAnnotationPropertyCell(_ indexPath: IndexPath) -> AnnotationPropertyCell {
-		return tableView.dequeueReusableCell(withIdentifier: RegionAnnotationPropertyCellId, for: indexPath) as! AnnotationPropertyCell
-	}
-	
+}
+
+// MARK: - Region Monitoring
+extension AnnotationDetailController {
 	func addRegionMonitoring(_ regionAnnotationMapCell: AnnotationMapCell?) {
 		#warning("TODO")
-//		guard let regionAnnotation = regionAnnotation else {
-//			return
-//		}
+		//		guard let regionAnnotation = regionAnnotation else {
+		//			return
+		//		}
 		
-//		let distance = regionAnnotation.radius * 2
-//		let region = MKCoordinateRegion.init(center: regionAnnotation.coordinate,
-//											 latitudinalMeters: distance,
-//											 longitudinalMeters: distance)
-//		regionAnnotationMapCell?.mapView.delegate = self
-//		regionAnnotationMapCell?.mapView.setRegion(region, animated: true)
-//		regionAnnotationMapCell?.mapView.addAnnotation(regionAnnotation)
-//		regionAnnotationMapCell?.mapView.addOverlay(MKCircle(center: regionAnnotation.coordinate, radius: regionAnnotation.radius))
+		//		let distance = regionAnnotation.radius * 2
+		//		let region = MKCoordinateRegion.init(center: regionAnnotation.coordinate,
+		//											 latitudinalMeters: distance,
+		//											 longitudinalMeters: distance)
+		//		regionAnnotationMapCell?.mapView.delegate = self
+		//		regionAnnotationMapCell?.mapView.setRegion(region, animated: true)
+		//		regionAnnotationMapCell?.mapView.addAnnotation(regionAnnotation)
+		//		regionAnnotationMapCell?.mapView.addOverlay(MKCircle(center: regionAnnotation.coordinate, radius: regionAnnotation.radius))
 	}
-	
-	// MARK: UITableViewDataSource
-	
+}
+
+// MARK: - UITableViewDataSource
+extension AnnotationDetailController {
 	override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
 		if (indexPath as NSIndexPath).row == RegionAnnotationSettingMapCell {
 			return 250.0
@@ -100,16 +93,16 @@ class AnnotationDetailController: UITableViewController, MKMapViewDelegate, UITe
 			cell = regionAnnotationMapCell
 		case RegionAnnotationSettingCoordinateCell:
 			let regionAnnotationPropertyCell = dequeueRegionAnnotationPropertyCell(indexPath)
-//			regionAnnotationPropertyCell.propertyLabel.text = "Coordinate"
-//			let coordinate = regionAnnotation?.coordinate
-//			regionAnnotationPropertyCell.valueTextField.text = String(format: "%f, %f", coordinate!.latitude, coordinate!.longitude)
-//			regionAnnotationPropertyCell.valueTextField.delegate = self
+			//			regionAnnotationPropertyCell.propertyLabel.text = "Coordinate"
+			//			let coordinate = regionAnnotation?.coordinate
+			//			regionAnnotationPropertyCell.valueTextField.text = String(format: "%f, %f", coordinate!.latitude, coordinate!.longitude)
+			//			regionAnnotationPropertyCell.valueTextField.delegate = self
 			cell = regionAnnotationPropertyCell
 		case RegionAnnotationSettingRasiusCell:
 			let regionAnnotationPropertyCell = dequeueRegionAnnotationPropertyCell(indexPath)
-//			regionAnnotationPropertyCell.propertyLabel.text = "Radius"
-//			regionAnnotationPropertyCell.valueTextField.text = String("\(regionAnnotation!.radius)")
-//			regionAnnotationPropertyCell.valueTextField.delegate = self
+			//			regionAnnotationPropertyCell.propertyLabel.text = "Radius"
+			//			regionAnnotationPropertyCell.valueTextField.text = String("\(regionAnnotation!.radius)")
+			//			regionAnnotationPropertyCell.valueTextField.delegate = self
 			cell = regionAnnotationPropertyCell
 		default:
 			cell = UITableViewCell()
@@ -118,8 +111,19 @@ class AnnotationDetailController: UITableViewController, MKMapViewDelegate, UITe
 		return cell
 	}
 	
-	// MARK: MKMapViewDelegate
+	#warning("Refactor")
+	func dequeueRegionAnnotationMapCell(_ indexPath: IndexPath) -> AnnotationMapCell {
+		return tableView.dequeueReusableCell(withIdentifier: RegionAnnotationMapCellId, for: indexPath) as! AnnotationMapCell
+	}
 	
+	#warning("Refactor")
+	func dequeueRegionAnnotationPropertyCell(_ indexPath: IndexPath) -> AnnotationPropertyCell {
+		return tableView.dequeueReusableCell(withIdentifier: RegionAnnotationPropertyCellId, for: indexPath) as! AnnotationPropertyCell
+	}
+}
+
+// MARK: - MKMapViewDelegate
+extension AnnotationDetailController {
 	func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
 		if overlay is MKCircle {
 			return AnnotationView.circleRenderer(overlay)
@@ -130,11 +134,11 @@ class AnnotationDetailController: UITableViewController, MKMapViewDelegate, UITe
 	func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
 		view.calloutOffset = CGPoint(x: -1000, y: -1000)
 	}
-	
-	// MARK: UITextFieldDelegate
-	
+}
+
+// MARK: - UITextFieldDelegate
+extension AnnotationDetailController {
 	func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
 		return false
 	}
-	
 }
