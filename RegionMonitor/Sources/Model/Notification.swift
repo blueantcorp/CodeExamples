@@ -37,7 +37,7 @@ let RegionNotificationTimestampKey = "RegionNotificationTimestamp"
 let RegionNotificationMessageKey = "RegionNotificationMessage"
 let RegionNotificationAppStatusKey = "RegionNotificationAppStatus"
 
-class Notification: NSObject, NSCoding {
+class RegionNotification: NSObject, NSCoding {
 	
 	let timestamp: Date
 	let event: RegionAnnotationEvent

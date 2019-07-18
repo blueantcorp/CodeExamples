@@ -35,14 +35,14 @@ let RegionNotificationsTableViewCellId = "RegionNotificationsTableViewCell"
 
 class NotificationListController: UITableViewController {
 	
-	var regionNotifications: [Notification]?
+	var regionNotifications: [RegionNotification]?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		title = NSLocalizedString("Region Notifications", comment: "Region Notifications")
 		
-		regionNotifications = NotificationsStore.sharedInstance.storedItems
+		regionNotifications = NotificationStore.shared.storedItems
 		regionNotifications?.sort(by: { $0.timestamp.timeIntervalSince1970 > $1.timestamp.timeIntervalSince1970 })
 		
 		NotificationCenter.default.addObserver(self,
@@ -88,7 +88,7 @@ class NotificationListController: UITableViewController {
 	// MARK: NSNotificationCenter Events
 	
 	@objc func regionNotificationsItemsDidChange(_ notification: Notification) {
-		regionNotifications = NotificationsStore.sharedInstance.storedItems
+		regionNotifications = NotificationStore.shared.storedItems
 		regionNotifications?.sort(by: { $0.timestamp.timeIntervalSince1970 > $1.timestamp.timeIntervalSince1970 })
 		DispatchQueue.main.async {
 			self.tableView.reloadData()

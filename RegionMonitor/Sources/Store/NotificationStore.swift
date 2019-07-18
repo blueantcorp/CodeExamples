@@ -34,8 +34,6 @@ import Foundation
 let RegionNotificationItemsKey = "RegionNotificationItems"
 let RegionNotificationItemsDidChangeNotification = "RegionNotificationItemsDidChangeNotification"
 
-class NotificationsStore {
-	
-	// MARK: Singleton
-	static let sharedInstance = GenericStore<Notification>(storeItemsKey: RegionNotificationItemsKey, storeItemsDidChangeNotification: RegionNotificationItemsDidChangeNotification)
+class NotificationStore {
+	static let shared = GenericStore<RegionNotification>(storeItemsKey: RegionNotificationItemsKey, storeItemsDidChangeNotification: RegionNotificationItemsDidChangeNotification)
 }

@@ -42,7 +42,7 @@ class AnnotationListController: UITableViewController {
 		
 		title = NSLocalizedString("Monitored Regions", comment: "Monitored Regions")
 		
-		regionAnnotations = AnnotationsStore.sharedInstance.storedItems
+		regionAnnotations = AnnotationStore.shared.storedItems
 		
 		NotificationCenter.default.addObserver(self,
 											   selector: #selector(AnnotationListController.regionAnnotationItemsDidChange(_:)),
@@ -51,7 +51,6 @@ class AnnotationListController: UITableViewController {
 	}
 	
 	// MARK: UITableViewDataSource
-	
 	override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		if regionAnnotations != nil {
 			return regionAnnotations!.count
@@ -79,7 +78,6 @@ class AnnotationListController: UITableViewController {
 	}
 	
 	// MARK: Segues
-	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == RegionAnnotationSettingsDetailSegue {
 			let cell = sender as? UITableViewCell
@@ -91,15 +89,13 @@ class AnnotationListController: UITableViewController {
 	}
 	
 	// MARK: Actions
-	
 	@IBAction func editButtonTapped(_ sender: AnyObject) {
 		tableView.isEditing = !tableView.isEditing
 	}
 	
 	// MARK: NSNotificationCenter Events
-	
 	@objc func regionAnnotationItemsDidChange(_ notification: Notification) {
-		regionAnnotations = AnnotationsStore.sharedInstance.storedItems
+		regionAnnotations = AnnotationStore.shared.storedItems
 		DispatchQueue.main.async {
 			self.tableView.reloadData()
 		}

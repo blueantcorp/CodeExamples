@@ -34,19 +34,15 @@ import Foundation
 let RegionAnnotationItemsKey = "RegionAnnotationItems"
 let RegionAnnotationItemsDidChangeNotification = "RegionAnnotationItemsDidChangeNotification"
 
-class AnnotationsStore {
-	
-	// MARK: Singleton
-	
-	static let sharedInstance = GenericStore<Annotation>(storeItemsKey: RegionAnnotationItemsKey, storeItemsDidChangeNotification: RegionAnnotationItemsDidChangeNotification)
+class AnnotationStore {
+	static let shared = GenericStore<Annotation>(storeItemsKey: RegionAnnotationItemsKey, storeItemsDidChangeNotification: RegionAnnotationItemsDidChangeNotification)
 	
 	class func annotationForRegionIdentifier(_ identifier: String) -> Annotation? {
-		for annotation in AnnotationsStore.sharedInstance.storedItems {
+		for annotation in AnnotationStore.shared.storedItems {
 			if annotation.identifier == identifier {
 				return annotation
 			}
 		}
 		return nil
 	}
-	
 }

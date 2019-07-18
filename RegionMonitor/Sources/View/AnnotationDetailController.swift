@@ -68,10 +68,10 @@ class AnnotationDetailController: UITableViewController, MKMapViewDelegate, UITe
 		
 		let distance = regionAnnotation.radius * 2
 		let region = MKCoordinateRegion.init(center: regionAnnotation.coordinate, latitudinalMeters: distance, longitudinalMeters: distance)
-		regionAnnotationMapCell?.mapView.delegate = self
-		regionAnnotationMapCell?.mapView.setRegion(region, animated: true)
-		regionAnnotationMapCell?.mapView.addAnnotation(regionAnnotation)
-		regionAnnotationMapCell?.mapView.addOverlay(MKCircle(center: regionAnnotation.coordinate, radius: regionAnnotation.radius))
+//		regionAnnotationMapCell?.mapView.delegate = self
+//		regionAnnotationMapCell?.mapView.setRegion(region, animated: true)
+//		regionAnnotationMapCell?.mapView.addAnnotation(regionAnnotation)
+//		regionAnnotationMapCell?.mapView.addOverlay(MKCircle(center: regionAnnotation.coordinate, radius: regionAnnotation.radius))
 	}
 	
 	// MARK: UITableViewDataSource
@@ -97,16 +97,16 @@ class AnnotationDetailController: UITableViewController, MKMapViewDelegate, UITe
 			cell = regionAnnotationMapCell
 		case RegionAnnotationSettingCoordinateCell:
 			let regionAnnotationPropertyCell = dequeueRegionAnnotationPropertyCell(indexPath)
-			regionAnnotationPropertyCell.propertyLabel.text = "Coordinate"
-			let coordinate = regionAnnotation?.coordinate
-			regionAnnotationPropertyCell.valueTextField.text = String(format: "%f, %f", coordinate!.latitude, coordinate!.longitude)
-			regionAnnotationPropertyCell.valueTextField.delegate = self
+//			regionAnnotationPropertyCell.propertyLabel.text = "Coordinate"
+//			let coordinate = regionAnnotation?.coordinate
+//			regionAnnotationPropertyCell.valueTextField.text = String(format: "%f, %f", coordinate!.latitude, coordinate!.longitude)
+//			regionAnnotationPropertyCell.valueTextField.delegate = self
 			cell = regionAnnotationPropertyCell
 		case RegionAnnotationSettingRasiusCell:
 			let regionAnnotationPropertyCell = dequeueRegionAnnotationPropertyCell(indexPath)
-			regionAnnotationPropertyCell.propertyLabel.text = "Radius"
-			regionAnnotationPropertyCell.valueTextField.text = String("\(regionAnnotation!.radius)")
-			regionAnnotationPropertyCell.valueTextField.delegate = self
+//			regionAnnotationPropertyCell.propertyLabel.text = "Radius"
+//			regionAnnotationPropertyCell.valueTextField.text = String("\(regionAnnotation!.radius)")
+//			regionAnnotationPropertyCell.valueTextField.delegate = self
 			cell = regionAnnotationPropertyCell
 		default:
 			cell = UITableViewCell()
