@@ -395,8 +395,5 @@ extension PassiveAuthentication {
 		} catch {
 			print( "ERROR - \(error)" )
 		}
-		
 	}
-	
-	
 }

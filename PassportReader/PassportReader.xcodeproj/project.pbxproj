@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6069D3FF22E1A92B00ABF77C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6069D3FE22E1A8F200ABF77C /* String.swift */; };
 		6099E23422E0C94B008840BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6099E23322E0C94B008840BC /* AppDelegate.swift */; };
 		6099E23622E0C94B008840BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6099E23522E0C94B008840BC /* SceneDelegate.swift */; };
-		6099E23822E0C94B008840BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6099E23722E0C94B008840BC /* ViewController.swift */; };
 		6099E23B22E0C94B008840BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6099E23922E0C94B008840BC /* Main.storyboard */; };
 		6099E23D22E0C952008840BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6099E23C22E0C952008840BC /* Assets.xcassets */; };
 		6099E24022E0C952008840BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6099E23E22E0C952008840BC /* LaunchScreen.storyboard */; };
@@ -19,7 +19,6 @@
 		60A9A6A422E12580009A211C /* PassportDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A9A6A322E12580009A211C /* PassportDetails.swift */; };
 		60C37B6122E1286700590360 /* PassportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C37B6022E1286700590360 /* PassportView.swift */; };
 		60C37B6322E1291300590360 /* PassiveAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C37B6222E1291300590360 /* PassiveAuthentication.swift */; };
-		60C37B6522E129F500590360 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C37B6422E129F500590360 /* String.swift */; };
 		60C37B7722E1767D00590360 /* OpenSSL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C37B7622E1767D00590360 /* OpenSSL.framework */; };
 		60C37B7822E18F6900590360 /* OpenSSL.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 60C37B7622E1767D00590360 /* OpenSSL.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		60C37B7922E1A63A00590360 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C37B5F22E126D900590360 /* ContentView.swift */; };
@@ -40,10 +39,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6069D3FE22E1A8F200ABF77C /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		6099E23022E0C94B008840BC /* PassportReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PassportReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6099E23322E0C94B008840BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6099E23522E0C94B008840BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6099E23722E0C94B008840BC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6099E23A22E0C94B008840BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6099E23C22E0C952008840BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6099E23F22E0C952008840BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,7 +54,6 @@
 		60C37B5F22E126D900590360 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		60C37B6022E1286700590360 /* PassportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PassportView.swift; path = ../../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/PassportReader/Sources/View/PassportView.swift; sourceTree = "<group>"; };
 		60C37B6222E1291300590360 /* PassiveAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PassiveAuthentication.swift; path = ../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/PassportReader/Sources/PassiveAuthentication.swift; sourceTree = "<group>"; };
-		60C37B6422E129F500590360 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = String.swift; path = ../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/PassportReader/Sources/String.swift; sourceTree = "<group>"; };
 		60C37B6622E12E7000590360 /* PassportReader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PassportReader.entitlements; sourceTree = "<group>"; };
 		60C37B7522E1346500590360 /* Passport-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Passport-Bridging-Header.h"; sourceTree = "<group>"; };
 		60C37B7622E1767D00590360 /* OpenSSL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenSSL.framework; path = Frameworks/OpenSSL.framework; sourceTree = "<group>"; };
@@ -74,6 +72,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6069D3FD22E1A8F200ABF77C /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				6069D3FE22E1A8F200ABF77C /* String.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		6099E22722E0C94B008840BC = {
 			isa = PBXGroup;
 			children = (
@@ -99,11 +105,10 @@
 			children = (
 				6099E23322E0C94B008840BC /* AppDelegate.swift */,
 				6099E23522E0C94B008840BC /* SceneDelegate.swift */,
-				60A9A6A022E1247B009A211C /* Model */,
-				60C37B5E22E126D100590360 /* View */,
 				60C37B6222E1291300590360 /* PassiveAuthentication.swift */,
-				60C37B6422E129F500590360 /* String.swift */,
-				6099E23722E0C94B008840BC /* ViewController.swift */,
+				60C37B5E22E126D100590360 /* View */,
+				60A9A6A022E1247B009A211C /* Model */,
+				6069D3FD22E1A8F200ABF77C /* Util */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -234,14 +239,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6099E23822E0C94B008840BC /* ViewController.swift in Sources */,
 				60A9A6A222E124A7009A211C /* Passport.swift in Sources */,
 				6099E23422E0C94B008840BC /* AppDelegate.swift in Sources */,
+				6069D3FF22E1A92B00ABF77C /* String.swift in Sources */,
 				60C37B6322E1291300590360 /* PassiveAuthentication.swift in Sources */,
 				60A9A6A422E12580009A211C /* PassportDetails.swift in Sources */,
 				60C37B7922E1A63A00590360 /* ContentView.swift in Sources */,
 				60C37B6122E1286700590360 /* PassportView.swift in Sources */,
-				60C37B6522E129F500590360 /* String.swift in Sources */,
 				6099E23622E0C94B008840BC /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
