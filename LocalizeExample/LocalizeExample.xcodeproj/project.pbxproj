@@ -26,6 +26,7 @@
 		6000EE6022E2142D0004CB16 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6000EE6222E2142D0004CB16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6000EE6822E214F30004CB16 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../../../../../../../../Users/emile/Projects/Portfolio/SwiftExamples/LocalizeExample/README.md; sourceTree = "<group>"; };
+		60231B0722E21908001C82EC /* Localize */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Localize; path = ../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/Localize; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +44,7 @@
 			isa = PBXGroup;
 			children = (
 				6000EE6822E214F30004CB16 /* README.md */,
+				60231B0722E21908001C82EC /* Localize */,
 				6000EE5322E2142A0004CB16 /* Source */,
 				6000EE6A22E215410004CB16 /* Resources */,
 				6000EE5222E2142A0004CB16 /* Products */,
