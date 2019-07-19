@@ -31,7 +31,7 @@
 
 import SwiftUI
 import Combine
-import NFCPassportReader
+import Passport
 
 // A View that just uses the UIColor systemBackground allowing
 // For light.dark mode support - willo be removed once this makes its way into SwiftUI properly
@@ -162,6 +162,3 @@ struct ContentView_Previews : PreviewProvider {
 	}
 }
 #endif
-
-
-x

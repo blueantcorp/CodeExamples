@@ -22,6 +22,7 @@
 		60C37B6522E129F500590360 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C37B6422E129F500590360 /* String.swift */; };
 		60C37B7722E1767D00590360 /* OpenSSL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C37B7622E1767D00590360 /* OpenSSL.framework */; };
 		60C37B7822E18F6900590360 /* OpenSSL.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 60C37B7622E1767D00590360 /* OpenSSL.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		60C37B7922E1A63A00590360 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C37B5F22E126D900590360 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -97,9 +98,9 @@
 			isa = PBXGroup;
 			children = (
 				6099E23322E0C94B008840BC /* AppDelegate.swift */,
+				6099E23522E0C94B008840BC /* SceneDelegate.swift */,
 				60A9A6A022E1247B009A211C /* Model */,
 				60C37B5E22E126D100590360 /* View */,
-				6099E23522E0C94B008840BC /* SceneDelegate.swift */,
 				60C37B6222E1291300590360 /* PassiveAuthentication.swift */,
 				60C37B6422E129F500590360 /* String.swift */,
 				6099E23722E0C94B008840BC /* ViewController.swift */,
@@ -111,8 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				6099E24122E0C952008840BC /* Info.plist */,
-				60C37B6622E12E7000590360 /* PassportReader.entitlements */,
 				60C37B7522E1346500590360 /* Passport-Bridging-Header.h */,
+				60C37B6622E12E7000590360 /* PassportReader.entitlements */,
 				6099E24822E0C9DA008840BC /* Assets */,
 			);
 			path = Resources;
@@ -238,6 +239,7 @@
 				6099E23422E0C94B008840BC /* AppDelegate.swift in Sources */,
 				60C37B6322E1291300590360 /* PassiveAuthentication.swift in Sources */,
 				60A9A6A422E12580009A211C /* PassportDetails.swift in Sources */,
+				60C37B7922E1A63A00590360 /* ContentView.swift in Sources */,
 				60C37B6122E1286700590360 /* PassportView.swift in Sources */,
 				60C37B6522E129F500590360 /* String.swift in Sources */,
 				6099E23622E0C94B008840BC /* SceneDelegate.swift in Sources */,

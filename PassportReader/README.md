@@ -1,6 +1,6 @@
 # Passport Reader
 
-NFC Passport reader experiment
+NFC ePassport reader experiment
 
 ## Instructions
 
@@ -8,8 +8,8 @@ Open and run the Xcode project on simulator or device
 
 ## General
 
-- Swift 5.0
-- iOS 12.2
+- Swift 5.1
+- iOS 13
 - No external libraries
-- Xcode 10.2.1
+- Xcode 11
 
