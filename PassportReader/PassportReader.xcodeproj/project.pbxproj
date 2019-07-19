@@ -10,7 +10,6 @@
 		6069D3FF22E1A92B00ABF77C /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6069D3FE22E1A8F200ABF77C /* String.swift */; };
 		6099E23422E0C94B008840BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6099E23322E0C94B008840BC /* AppDelegate.swift */; };
 		6099E23622E0C94B008840BC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6099E23522E0C94B008840BC /* SceneDelegate.swift */; };
-		6099E23B22E0C94B008840BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6099E23922E0C94B008840BC /* Main.storyboard */; };
 		6099E23D22E0C952008840BC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6099E23C22E0C952008840BC /* Assets.xcassets */; };
 		6099E24022E0C952008840BC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6099E23E22E0C952008840BC /* LaunchScreen.storyboard */; };
 		6099E24A22E0CBDE008840BC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 6099E24922E0CBDE008840BC /* README.md */; };
@@ -39,16 +38,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6000EE4722E1FB330004CB16 /* Passport */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Passport; path = ../../Passport; sourceTree = "<group>"; };
 		6069D3FE22E1A8F200ABF77C /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		6099E23022E0C94B008840BC /* PassportReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PassportReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6099E23322E0C94B008840BC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6099E23522E0C94B008840BC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6099E23A22E0C94B008840BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6099E23C22E0C952008840BC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6099E23F22E0C952008840BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6099E24122E0C952008840BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6099E24922E0CBDE008840BC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		60A9A69F22E0E683009A211C /* Passport */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Passport; path = ../../Passport; sourceTree = "<group>"; };
 		60A9A6A122E124A7009A211C /* Passport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Passport.swift; path = ../../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/PassportReader/Sources/Model/Passport.swift; sourceTree = "<group>"; };
 		60A9A6A322E12580009A211C /* PassportDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PassportDetails.swift; path = ../../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/PassportReader/Sources/Model/PassportDetails.swift; sourceTree = "<group>"; };
 		60C37B5F22E126D900590360 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,7 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				6099E24922E0CBDE008840BC /* README.md */,
-				60A9A69F22E0E683009A211C /* Passport */,
+				6000EE4722E1FB330004CB16 /* Passport */,
 				6099E23222E0C94B008840BC /* Sources */,
 				6099E24722E0C9BC008840BC /* Resources */,
 				6099E23122E0C94B008840BC /* Products */,
@@ -127,7 +125,6 @@
 		6099E24822E0C9DA008840BC /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				6099E23922E0C94B008840BC /* Main.storyboard */,
 				6099E23C22E0C952008840BC /* Assets.xcassets */,
 				6099E23E22E0C952008840BC /* LaunchScreen.storyboard */,
 			);
@@ -228,7 +225,6 @@
 				6099E24022E0C952008840BC /* LaunchScreen.storyboard in Resources */,
 				6099E23D22E0C952008840BC /* Assets.xcassets in Resources */,
 				6099E24A22E0CBDE008840BC /* README.md in Resources */,
-				6099E23B22E0C94B008840BC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,14 +249,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		6099E23922E0C94B008840BC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6099E23A22E0C94B008840BC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		6099E23E22E0C952008840BC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
