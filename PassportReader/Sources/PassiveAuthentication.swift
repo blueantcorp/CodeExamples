@@ -32,7 +32,6 @@
 import Foundation
 import Passport
 
-
 public enum PassiveAuthenticationError: Error {
 	case UnableToGetX509CertificateFromPKCS7(String)
 	case UnableToVerifyX509CertificateForSOD(String)

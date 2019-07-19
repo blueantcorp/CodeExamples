@@ -20,7 +20,23 @@
 		60C37B6122E1286700590360 /* PassportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C37B6022E1286700590360 /* PassportView.swift */; };
 		60C37B6322E1291300590360 /* PassiveAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C37B6222E1291300590360 /* PassiveAuthentication.swift */; };
 		60C37B6522E129F500590360 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C37B6422E129F500590360 /* String.swift */; };
+		60C37B7722E1767D00590360 /* OpenSSL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C37B7622E1767D00590360 /* OpenSSL.framework */; };
+		60C37B7822E18F6900590360 /* OpenSSL.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 60C37B7622E1767D00590360 /* OpenSSL.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		60C37B7322E1330800590360 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				60C37B7822E18F6900590360 /* OpenSSL.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		6099E23022E0C94B008840BC /* PassportReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PassportReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -40,6 +56,8 @@
 		60C37B6222E1291300590360 /* PassiveAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PassiveAuthentication.swift; path = ../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/PassportReader/Sources/PassiveAuthentication.swift; sourceTree = "<group>"; };
 		60C37B6422E129F500590360 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = String.swift; path = ../../../../../../../System/Volumes/Data/Users/emile/Projects/Portfolio/SwiftExamples/PassportReader/Sources/String.swift; sourceTree = "<group>"; };
 		60C37B6622E12E7000590360 /* PassportReader.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PassportReader.entitlements; sourceTree = "<group>"; };
+		60C37B7522E1346500590360 /* Passport-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Passport-Bridging-Header.h"; sourceTree = "<group>"; };
+		60C37B7622E1767D00590360 /* OpenSSL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenSSL.framework; path = Frameworks/OpenSSL.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +66,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60A9A69E22E0E1F7009A211C /* Passport in Frameworks */,
+				60C37B7722E1767D00590360 /* OpenSSL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,12 +76,12 @@
 		6099E22722E0C94B008840BC = {
 			isa = PBXGroup;
 			children = (
-				60C37B6622E12E7000590360 /* PassportReader.entitlements */,
 				6099E24922E0CBDE008840BC /* README.md */,
 				60A9A69F22E0E683009A211C /* Passport */,
 				6099E23222E0C94B008840BC /* Sources */,
 				6099E24722E0C9BC008840BC /* Resources */,
 				6099E23122E0C94B008840BC /* Products */,
+				60C37B6F22E1330700590360 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +111,8 @@
 			isa = PBXGroup;
 			children = (
 				6099E24122E0C952008840BC /* Info.plist */,
+				60C37B6622E12E7000590360 /* PassportReader.entitlements */,
+				60C37B7522E1346500590360 /* Passport-Bridging-Header.h */,
 				6099E24822E0C9DA008840BC /* Assets */,
 			);
 			path = Resources;
@@ -125,6 +146,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		60C37B6F22E1330700590360 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60C37B7622E1767D00590360 /* OpenSSL.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +164,7 @@
 				6099E22C22E0C94B008840BC /* Sources */,
 				6099E22D22E0C94B008840BC /* Frameworks */,
 				6099E22E22E0C94B008840BC /* Resources */,
+				60C37B7322E1330800590360 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -354,9 +384,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = PassportReader.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Resources/PassportReader.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7R2H7J9PW2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -364,6 +398,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueantcorp.PassportReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Resources/Passport-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -373,9 +408,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = PassportReader.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Resources/PassportReader.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7R2H7J9PW2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				INFOPLIST_FILE = Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -383,6 +422,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.blueantcorp.PassportReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Resources/Passport-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
